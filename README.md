@@ -1,1 +1,1 @@
-Webiste for Media Bazaar project
+Website for Media Bazaar project
