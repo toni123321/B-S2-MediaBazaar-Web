@@ -2,7 +2,6 @@ body {
     background-color: #6FB3B8;
 }
 
-
 .content {
     position: absolute;
     top: 50%;
@@ -16,9 +15,8 @@ body {
 }
 
 .btnview button {
-    font-size:30px;
+    font-size:clamp(15px, 2.5vw, 30px);
     color: #fff;
-
     background-color: Transparent;
     text-decoration: none;
     font-family:  Sans-serif;
@@ -26,7 +24,6 @@ body {
     border: 2px solid #fff;
     padding: 10px;
     border-radius: 15px;
-
 }
 
 .btnview button:hover {
@@ -34,7 +31,7 @@ body {
     -webkit-text-stroke: 0.5px #fff;
 }
 
-
+/* Responsive welcome text */
 .welcome-text{
-  font-size: 25px;
+  font-size: clamp(15px, 2.5vw, 35px);
 }

@@ -11,8 +11,12 @@
 </head>
 <body>
     <div class="header">
-        <div class="grid-items" id="logo"><img src="../Images/MediaBazaarLogo.png" alt="Logo" width="150" height="150"></div>
+        <div class="grid-items" id="logo"></div>
+
         <div class="navbar grid-items">
+            <div class="progress_bar_container">
+                <div class="progress_bar"></div>
+            </div>
             <a href="#"><i class="fa fa-fw fa-home"></i></a>
             <a href="#"><i class="fa fa-calendar"></i></a>
             <a href="#"><i class="fa fa-fw fa-user"></i></a>
