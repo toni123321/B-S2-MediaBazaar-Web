@@ -11,7 +11,7 @@
 }
 
 .navbar a {
-    font-size: 2rem;
+    font-size: 55px;
 }
 @media screen and (max-width: 600px) {
     .navbar a {
@@ -20,6 +20,5 @@
 }
 
 .navbar a:not(:last-child) {
-    margin-right:25px;
+    margin-right:70px;
 }
-

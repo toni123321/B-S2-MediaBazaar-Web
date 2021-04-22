@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="header">
-        <div class="grid-items" id="logo"><img src="../Images/MediaBazaarLogo.png" alt="Logo" width="100" height="100"></div>
+        <div class="grid-items" id="logo"><img src="../Images/MediaBazaarLogo.png" alt="Logo" width="150" height="150"></div>
         <div class="navbar grid-items">
             <a href="#"><i class="fa fa-fw fa-home"></i></a>
             <a href="#"><i class="fa fa-calendar"></i></a>

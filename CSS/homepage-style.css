@@ -16,19 +16,25 @@ body {
 }
 
 .btnview button {
-    font-size:20px;
-    color: white;
-    background-color: green;
+    font-size:30px;
+    color: #fff;
+
+    background-color: Transparent;
     text-decoration: none;
     font-family:  Sans-serif;
     font-weight: bolder;
-    border: 2px solid lightblue;
+    border: 2px solid #fff;
     padding: 10px;
     border-radius: 15px;
 
 }
 
-.btnview a:hover {
+.btnview button:hover {
     color: #6FB3B8;
-    -webkit-text-stroke: 0.8px #fff;
+    -webkit-text-stroke: 0.5px #fff;
+}
+
+
+.welcome-text{
+  font-size: 25px;
 }
