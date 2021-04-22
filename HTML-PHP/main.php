@@ -10,10 +10,13 @@
     <title>Main</title>
 </head>
 <body>
-    <div class="navbar">
-        <a class="active" href="#"><i class="fa fa-fw fa-home"></i></a>
-        <a href="#"><i class="fa fa-calendar"></i></a>
-        <a href="#"><i class="fa fa-fw fa-user"></i></a>
+    <div class="header">
+        <div class="grid-items" id="logo"><img src="../Images/MediaBazaarLogo.png" alt="Logo" width="100" height="100"></div>
+        <div class="navbar grid-items">
+            <a href="#"><i class="fa fa-fw fa-home"></i></a>
+            <a href="#"><i class="fa fa-calendar"></i></a>
+            <a href="#"><i class="fa fa-fw fa-user"></i></a>
+        </div>
     </div>
 
 </body>
