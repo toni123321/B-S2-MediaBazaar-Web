@@ -8,6 +8,8 @@
 </head>
 <body>
     <?php include 'main.php';?>
+    <?php include '../DataAccess/DbHelper.php';?>
+
     <div class="content">
         <div class="welcome-text">
             <h2>Welcome, user</h2>
@@ -16,6 +18,12 @@
         <div class="btnview">
 <!--            <a href="#">View full schedule ></a>-->
             <button>View full schedule ></button>
+            <h2>
+                <?php
+                    $dbHelper = new DbHelper();
+                    echo $dbHelper->GetUsers();
+                ?>
+            </h2>
         </div>
     </div>
 </body>
