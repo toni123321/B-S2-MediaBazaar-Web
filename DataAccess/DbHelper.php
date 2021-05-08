@@ -1,5 +1,5 @@
 
-<?php include '../Modules/Department.php'; ?>
+<?php include '../Models/Department.php'; ?>
 
 <?php
 
@@ -17,74 +17,6 @@ class DbHelper {
         $this->dbName = $dbName;
         $this->username = $username;
         $this->password = $password;
-    }
-
-
-    public function GetUser($employee_id)
-    {
-        $employee;
-        try {
-
-            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $sql = "SELECT e.*, d.Name as'DepName'
-                    from employee as e
-                    inner join department as d
-                    on d.ID = e.DepartmentID
-                    where e.ID=?";
-
-            $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$employee_id]);
-
-            $result = $stmt->fetchAll();
-
-            foreach ($result as $row)
-            {
-                $id = $row['ID'];
-                $firstName = $row['FirstName'];
-                $lastName = $row['LastName'];
-                $dateOfBirth = $row['DateOfBirth'];
-                $gender = $row['Gender'];
-
-                //Contact details
-                $email = $row['Email'];
-                $phoneNumber = $row['PhoneNumber'];
-                $street = $row['Street'];
-                $city = $row['City'];
-                $country = $row['Country'];
-                $postcode = $row['PostCode'];
-                $bsn = $row['BSN'];
-
-                //Emergency contact detials
-                $emConName = $row['EmergencyContactName'];
-                $emConRelation = $row['EmergencyContactRelation'];
-                $emConEmail = $row['EmergencyContactEmail'];
-                $emConPhoneNum = $row['EmergencyContactPhone'];
-
-
-                // Job specifications
-                $employmentType = $row['EmploymentType'];
-                $hourlyWages = $row['HourlyWages'];
-                $departmentID = $row['DepartmentID'];
-
-                $remainingHolidayDays = $row['RemainingHolidayDays'];
-                $depName = $row['DepName'];
-
-                $department = new Department($departmentID, $depName);
-
-                $employee = new Employee($id, $firstName, $lastName, $dateOfBirth, $gender, $email,
-                $phoneNumber, $street, $city, $country, $postcode, $bsn, $emConName, $emConRelation,
-                $emConEmail, $emConPhoneNum, $employmentType, $hourlyWages, $department, $remainingHolidayDays);
-            }
-
-            // Close DB connection
-            $this->conn = null;
-
-        } catch(PDOException $e) {
-            echo $e->getMessage();
-        }
-        return $employee;
     }
 
     public function GetUsers()

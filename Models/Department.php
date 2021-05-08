@@ -1,4 +1,4 @@
-<?php include '../Modules/Employee.php'; ?>
+<?php include '../Models/Employee.php'; ?>
 
 <?php
 class Department
