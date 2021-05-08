@@ -40,17 +40,20 @@
     background-color: black;
     padding: 1%;
     border-radius: 15px;
-    /*!* element 1*!*/
-    /*width:33%;*/
-    /*!* element 2 *!*/
-    /*width: 40%;*/
-    /*margin-left: 30%;*/
 
-    /* element 3 */
-    width: 40%;
-    margin-left: 60%;
+    /* element 1
+    width: 20%;
+    margin-left: 0%; */
+
+    /* element 2
+    width: 20%;
+    margin-left: 26%; */
+
+    /* element 3
+    width: 20%;
+    margin-left: 53%; */
+
+    /* element 4 */
+    width: 20%;
+    margin-left: 78%;
 }
-
-
-
-
