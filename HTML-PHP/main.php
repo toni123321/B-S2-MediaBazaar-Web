@@ -22,7 +22,8 @@
             </div>
             <a href="#"><i class="fa fa-fw fa-home"></i></a>
             <a href="#"><i class="fa fa-calendar"></i></a>
-            <a href="#"><i class="fa fa-fw fa-user"></i></a>
+            <a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user account"></i></a>
+
             <?php
               // if (isset($_SESSION['loggedUser'])) {
               //     echo '<a href=""><i class="fas fa-sign-out-alt"></i></a>';

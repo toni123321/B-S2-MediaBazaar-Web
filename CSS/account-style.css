@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --gray-background: #2f2f2f;
+  --yellow-background: #fdec51;
+  --light-gray: #d1cfce;
+  --dark-gray: #818184;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--gray-background);
+  background-color: #99CED3;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  opacity: 0.6;
+  border: none;
+  background-color: Transparent;
+}
+.cancel_button {
+  margin-right: 20px;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: black;
+}
+
+input,
+textarea {
+  outline: none;
+  border-style: none;
+  border-bottom: 1px solid var(--light-gray);
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  resize: vertical;
+}
+
+.back-container {
+  /* background: var(--yellow-background); */
+  background: linear-gradient(to right, #86B3D1, #EDB5BF);
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 0 60px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  margin-bottom: 60px;
+}
+
+.top p {
+  font-size: 1.5rem;
+}
+
+.front-container {
+  background: #fff;
+  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.3);
+
+  width: 760px;
+  position: relative;
+  margin: auto;
+}
+
+.front-container img {
+  border-radius: 50%;
+  width: 70px;
+  position: absolute;
+  top: -35px;
+  left: 40px;
+}
+
+.front-container .form-group {
+  padding: 100px 40px 0px;
+  max-width: 100%;
+  width: 760px;
+  display: grid;
+  grid-template-areas:
+    "email phoneNumber"
+    "street city"
+    "country postCode"
+    "bsn emConName"
+    "emConRelation emConEmail"
+    "emConPhone emConPhone";
+    /* "email phoneNumber"
+    "street city"
+    "country postCode"
+    "bsn bsn"
+    "emConName emConName"
+    "emConRelation emConRelation"
+    "emConEmail emConEmail"
+    "emConPhone emConPhone"; */
+
+}
+
+@media screen and (max-width: 500px)  {
+  .front-container {
+    width: 500px;
+  }
+
+  .front-container .form-group {
+    padding: 100px 40px 0px;
+    max-width: 100%;
+    width: 760px;
+    display: grid;
+    grid-template-areas:
+      "email email"
+      "phoneNumber phoneNumber"
+      "street street"
+      "city city"
+      "country country"
+      "postCode postCode"
+      "bsn bsn"
+      "emConName emConName"
+      "emConRelation emConRelation"
+      "emConEmail emConEmail"
+      "emConPhone emConPhone";
+  }
+}
+
+/* "country postCode"
+"bsn emConName"
+"emConRelation emConEmail"
+"emConPhone"; */
+
+.email {
+  grid-area: email;
+}
+.street {
+  grid-area: street;
+}
+.phoneNumber {
+  grid-area: phoneNumber;
+}
+.country {
+  grid-area: country;
+}
+.city {
+  grid-area: city;
+}
+.postCode {
+  grid-area: postCode;
+}
+.emConName {
+  grid-area: emConName;
+}
+.Bsn {
+  grid-area: Bsn;
+}
+.emConPhone {
+  grid-area: emConPhone;
+}
+
+.emConEmail {
+  grid-area: emConEmail;
+}
+
+.emConRelation {
+  grid-area: emConRelation;
+}
+
+::placeholder {
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.bottom {
+  padding-bottom: 30px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bottom a {
+  margin-left: 20px;
+}
