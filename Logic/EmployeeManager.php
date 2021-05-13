@@ -35,6 +35,17 @@ class EmployeeManager
     return null;
   }
 
+  public function UpdateEmployee($emp)
+  {
+    if($this->GetEmployee($emp->GetID()) != null)
+    {
+      $this->storage->UpdateUser($emp);
+      $this->LoadFromStorage();
+      return true;
+    }
+    return false;
+  }
+
   public function GetAllEmployees()
   {
     return $this->employees;

@@ -1,14 +1,13 @@
 
 
-  <?php include '../Logic/EmployeeManager.php';?>
-  <?php
-  session_start();
-  if(isset($_SESSION['loggedUser']))
-  {
+<?php include '../Logic/EmployeeManager.php';?>
+<?php
+session_start();
+if(isset($_SESSION['loggedUser']))
+{
+  $currEmp = unserialize($_SESSION['loggedUser']);
 
-    $currEmp = unserialize($_SESSION['loggedUser']);
-
-  ?>
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>

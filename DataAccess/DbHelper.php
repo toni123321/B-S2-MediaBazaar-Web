@@ -86,6 +86,36 @@ class DbHelper {
         return $employees;
     }
 
+    public function UpdateUser($emp)
+    {
+      try {
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "UPDATE employee
+                    SET Email = ?,
+                    PhoneNumber = ?,
+                    Street = ?,
+                    City = ?,
+                    Country = ?,
+                    PostCode = ?,
+                    BSN = ?,
+                    EmergencyContactName = ?,
+                    EmergencyContactRelation = ?,
+                    EmergencyContactEmail = ?,
+                    EmergencyContactPhone = ?
+                    WHERE ID = ?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetBSN(),$emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone(), $emp->GetID()]);
+
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
     public function GetDepartments()
     {
         $departments = array();

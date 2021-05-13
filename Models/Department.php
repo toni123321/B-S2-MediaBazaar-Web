@@ -7,8 +7,6 @@ class Department
     private $id;
     private $name;
 
-
-
     //Properties
     public function GetID()
     {

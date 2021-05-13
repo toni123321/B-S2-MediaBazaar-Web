@@ -27,69 +27,67 @@
 
     <div class="front-container">
       <img src="../Images/avatar.png" alt="avatar" />
-      <form class="form-group" action="#" method="post">
+      <form id="accountForm" class="form-group" action="../Handling/accountHandling.php" method="post">
         <div class="email">
           <label for="email">Email</label>
-          <input type="text" id="email" placeholder="Enter your email" value="<?php echo $currEmp->GetEmail()?>"/>
+          <input type="text" name="email" id="email" placeholder="Enter your email" value="<?php echo $currEmp->GetEmail()?>"/>
         </div>
 
         <div class="phoneNumber">
           <label for="phoneNumber">Phone number</label>
-          <input type="text" id="phoneNumber" placeholder="Enter your phone number" value="<?php echo $currEmp->GetPhoneNumber()?>"/>
+          <input type="text" name = "phoneNumber" id="phoneNumber" placeholder="Enter your phone number" value="<?php echo $currEmp->GetPhoneNumber()?>"/>
         </div>
 
         <div class="street">
           <label for="street">Street</label>
-          <input type="text" id="street" placeholder="Enter your street" value="<?php echo $currEmp->GetStreet()?>"/>
+          <input type="text" name="street" id="street" placeholder="Enter your street" value="<?php echo $currEmp->GetStreet()?>"/>
         </div>
 
         <div class="city">
           <label for="city">City</label>
-          <input type="city" id="city" placeholder="Enter your city" value="<?php echo $currEmp->GetCity()?>"/>
+          <input type="city" name="city" id="city" placeholder="Enter your city" value="<?php echo $currEmp->GetCity()?>"/>
         </div>
 
         <div class="country">
           <label for="country">Country</label>
-          <input type="country" id="country" placeholder="Enter your country" value="<?php echo $currEmp->GetCountry()?>"/>
+          <input type="country" name="country" id="country" placeholder="Enter your country" value="<?php echo $currEmp->GetCountry()?>"/>
         </div>
 
         <div class="postCode">
           <label for="postCode">Post code</label>
-          <input type="text" id="postCode" placeholder="Enter your post code" value="<?php echo $currEmp->GetPostCode()?>"/>
+          <input type="text" name = "postCode" id="postCode" placeholder="Enter your post code" value="<?php echo $currEmp->GetPostCode()?>"/>
         </div>
 
 
         <div class="bsn">
           <label for="bsn">Bsn</label>
-          <input type="bsn" id="bsn" placeholder="Enter your Bsn number" value="<?php echo $currEmp->GetBSN()?>"/>
+          <input type="bsn" name="bsn" id="bsn" placeholder="Enter your Bsn number" value="<?php echo $currEmp->GetBSN()?>"/>
         </div>
 
         <div class="emConName">
           <label for="emConName">Emergency contact name</label>
-          <input type="emConName" id="emConName" placeholder="Enter your emergency contact name" value="<?php echo $currEmp->GetEmConName()?>"/>
+          <input type="emConName" name = "emConName" id="emConName" placeholder="Enter your emergency contact name" value="<?php echo $currEmp->GetEmConName()?>"/>
         </div>
 
         <div class="emConRelation">
           <label for="emConRelation">Emergency Contact Relation</label>
-          <input type="emConRelation" id="emConRelation" placeholder="Enter your Emergency Contact Relation" value="<?php echo $currEmp->GetEmCOnRelation()?>"/>
+          <input type="emConRelation" name="emConRelation" id="emConRelation" placeholder="Enter your Emergency Contact Relation" value="<?php echo $currEmp->GetEmCOnRelation()?>"/>
         </div>
 
         <div class="emConEmail">
           <label for="emConEmail">Emergency contact email</label>
-          <input type="emConEmail" id="emConEmail" placeholder="Enter your emergency contact email" value="<?php echo $currEmp->GetEmConEmail()?>"/>
+          <input type="emConEmail" name = "emConEmail" id="emConEmail" placeholder="Enter your emergency contact email" value="<?php echo $currEmp->GetEmConEmail()?>"/>
         </div>
         <div class="emConPhone">
           <label for="emConPhone">Emergency Contact Phone number</label>
-          <input type="emConPhone" id="emConPhone" placeholder="Enter your Emergency Contact phone number" value="<?php echo $currEmp->GetEmConPhone()?>"/>
+          <input type="emConPhone" name="emConPhoneNum" id="emConPhone" placeholder="Enter your Emergency Contact phone number" value="<?php echo $currEmp->GetEmConPhone()?>"/>
         </div>
       </form>
     </div>
 
     <div class="bottom">
       <button class="cancel_button" type="button" name="cancel_button">Cancel</button>
-      <button class="save_button" type="button" name="save_button">Save</button>
-      <!-- <a href="#">Cancel</a>
-      <a href="#">Save</a> -->
+      <button class="save_button" type="submit" name="save_button" form="accountForm">Save</button>
     </div>
   </div>
 </body>

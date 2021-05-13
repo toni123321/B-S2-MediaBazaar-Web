@@ -271,7 +271,7 @@ class Employee {
 
     public function GetRemainingHolidayDays()
     {
-        return $this->$remainingHolidayDays;
+        return $this->remainingHolidayDays;
     }
     public function SetRemainingHolidayDays($remainingHolidayDays)
     {
