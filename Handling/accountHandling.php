@@ -16,7 +16,7 @@ if(isset($_SESSION['loggedUser']))
   $emConPhoneNum = $_POST['emConPhoneNum'];
   $postCode = $_POST['postCode'];
 
-  echo $email;
+  //echo $email;
 
   $currEmp = unserialize($_SESSION['loggedUser']);
   $newEmp = new Employee($currEmp->GetID(), $currEmp->GetFirstName(), $currEmp->GetLastName(), $currEmp->GetDateOfBirth(), $currEmp->GetGender(), $email, $phoneNumber, $street, $city, $country, $postCode, $bsn, $emConName, $emConRelation, $emConEmail, $emConPhoneNum, $currEmp->GetEmploymentType(), $currEmp->GetHourlyWages(), $currEmp->GetDepartment(), $currEmp->GetRemainingHolidayDays());
@@ -26,6 +26,7 @@ if(isset($_SESSION['loggedUser']))
   $_SESSION['loggedUser'] = serialize($employee_manager->GetEmployee($newEmp->GetID()));
   //$test = unserialize($_SESSION['loggedUser']);
   //echo $test->GetEmConName();
+  header("Location: ../HTML-PHP/homepage.php");
 }
 
 ?>

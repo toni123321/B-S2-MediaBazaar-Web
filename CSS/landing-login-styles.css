@@ -58,7 +58,7 @@ body {
 }
 
 .submit, .forgot {
-    margin-top: 20px;
+    margin-block: 20px;
     text-align: center;
 }
 

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
     <link rel="stylesheet" href="../CSS/account-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="../Libraries/jquery-3.6.0.min.js"></script>
 </head>
 
 
@@ -16,13 +19,14 @@
     {
       $currEmp = unserialize($_SESSION['loggedUser']);
     }
+
   ?>
   <div class="back-container">
     <div class="top">
       <p>Account settings</p>
-      <a href="#"><svg fill="#000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-          <path d="M0 0h24v24H0z" fill="none" /></svg></a>
+      <a href="../HTML-PHP/homepage.php" class="closeBtn">
+          <i class="fas fa-times"></i>
+      </a>
     </div>
 
     <div class="front-container">
@@ -86,9 +90,12 @@
     </div>
 
     <div class="bottom">
-      <button class="cancel_button" type="button" name="cancel_button">Cancel</button>
+      <button class="reset_button" type="button" name="reset_button">Reset</button>
       <button class="save_button" type="submit" name="save_button" form="accountForm">Save</button>
     </div>
   </div>
+  <script src="../JavaScript/reloadAccountPageHandling.js"></script>
+
+  <script src="../JavaScript/successAccountMsgHandling.js"></script>
 </body>
 </html>

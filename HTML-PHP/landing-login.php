@@ -32,7 +32,7 @@
                     ?>
                 </datalist>
                 <button class="submit" type="submit">Sign in</button>
-                <p class="forgot"><a href="#">Forgot Password?</p>
+<!--                <p class="forgot"><a href="#">Forgot Password?</p>-->
             </form>
         </div>
     </div>
