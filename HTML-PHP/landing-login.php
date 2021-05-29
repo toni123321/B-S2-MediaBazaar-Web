@@ -10,14 +10,6 @@
 
 </head>
 <body>
-    <?php
-        session_start();
-        if(isset($_SESSION['error_login']))
-        {
-            echo '<h2 class="msg">'. $_SESSION['error_login'] .'</h2>';
-            unset($_SESSION['error_login']);
-        }
-    ?>
     <div class="main-parent">
         <div class="main">
             <p class="login-title" >Log in</p>
@@ -34,7 +26,7 @@
                     foreach ($allDepartments as $department) {
 
                     ?>
-                      <option value="<?php echo $department->GetName();?>">
+                      <option value="<?php echo $department->GetName(); ?>">
                     <?php
                     }
                     ?>

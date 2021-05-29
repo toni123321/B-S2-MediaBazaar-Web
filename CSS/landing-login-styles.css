@@ -4,11 +4,6 @@ body {
     margin: 0 0;
 }
 
-.msg {
-    margin-top: 5%;
-    text-align: center;
-}
-
 /* Center the form both horizontally and vertically in the center */
 .main-parent {
     height: 100vh;

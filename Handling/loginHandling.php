@@ -19,18 +19,11 @@
           header("Location: ../HTML-PHP/homepage.php");
       }
       else{
-          session_start();
-          $_SESSION['error_login'] = $error_msg;
-          header("Location: ../HTML-PHP/landing-login.php");
-          exit();
-          //return $error_msg;
+        return $error_msg;
       }
     }
     else{
-        session_start();
-        $_SESSION['error_login'] = $error_msg;
-        header("Location: ../HTML-PHP/landing-login.php");
-        exit();
+      return $error_msg;
     }
   }
 
