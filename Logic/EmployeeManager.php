@@ -14,6 +14,7 @@ class EmployeeManager
       $this->LoadFromStorage();
   }
 
+
   public function LoadFromStorage()
   {
       $this->employees = $this->storage->GetUsers();

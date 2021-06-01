@@ -1,5 +1,7 @@
 
 <?php include '../Models/Department.php'; ?>
+<?php include '../Models/Shift.php'; ?>
+
 
 <?php
 
@@ -148,6 +150,45 @@ class DbHelper {
             echo $e->getMessage();
         }
         return $departments;
+    }
+
+    public function GetShifts(){
+        $shifts = array();
+
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT ID, EmployeeID, Date, HasAttended, NoShowReason, Type, wfh
+                    from shift";
+
+
+            $result = $this->conn->query($sql);
+
+
+            foreach ($result as $row)
+            {
+
+                $id = $row['ID'];
+                $empId = $row['EmployeeID'];
+                $date = $row['Date'];
+                $hasAttended = $row['HasAttended'];
+                $noShowReason = $row['NoShowReason'];
+                $type = $row['Type'];
+                $wfh = $row['wfh'];
+
+                $shift = new Shift($id, $empId, $date, $hasAttended, $noShowReason, $type, $wfh);
+                $shifts[] = $shift;
+            }
+
+            // Close DB connection
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+        return $shifts;
     }
 
 
