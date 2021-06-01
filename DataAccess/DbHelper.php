@@ -53,7 +53,6 @@ class DbHelper {
                 $city = $row['City'];
                 $country = $row['Country'];
                 $postcode = $row['PostCode'];
-                $bsn = $row['BSN'];
 
                 //Emergency contact detials
                 $emConName = $row['EmergencyContactName'];
@@ -73,7 +72,7 @@ class DbHelper {
                 $department = new Department($departmentID, $depName);
 
                 $employee = new Employee($id, $firstName, $lastName, $dateOfBirth, $gender, $email,
-                $phoneNumber, $street, $city, $country, $postcode, $bsn, $emConName, $emConRelation,
+                $phoneNumber, $street, $city, $country, $postcode, $emConName, $emConRelation,
                 $emConEmail, $emConPhoneNum, $employmentType, $hourlyWages, $department, $remainingHolidayDays);
 
                 $employees[] = $employee;
@@ -101,7 +100,6 @@ class DbHelper {
                     City = ?,
                     Country = ?,
                     PostCode = ?,
-                    BSN = ?,
                     EmergencyContactName = ?,
                     EmergencyContactRelation = ?,
                     EmergencyContactEmail = ?,
@@ -109,7 +107,87 @@ class DbHelper {
                     WHERE ID = ?";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetBSN(),$emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone(), $emp->GetID()]);
+            $stmt->execute([$emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone(), $emp->GetID()]);
+
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function IsAccountEditRequestSent($id)
+    {
+        $isRequestSent = false;
+        try {
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT count(*) FROM pending_changed_details 
+                    WHERE ID=?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$id]);
+            $result = $stmt->fetchColumn();
+
+
+            if($result == 1)
+            {
+                $isRequestSent = true;
+            }
+
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+        return $isRequestSent;
+    }
+
+    public function SendAccountEditRequest($emp)
+    {
+        try {
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "INSERT INTO 
+                    pending_changed_details
+                    (ID, Email, PhoneNumber, Street, City, Country, PostCode, 
+                     EmergencyContactName, EmergencyContactRelation, EmergencyContactEmail, 
+                     EmergencyContactPhone) 
+                    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$emp->GetId(), $emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone()]);
+
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function UpdateAccountEditRequest($emp)
+    {
+        try {
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "UPDATE pending_changed_details 
+                    SET Email = ?,
+                    PhoneNumber = ?,
+                    Street = ?,
+                    City = ?,
+                    Country = ?,
+                    PostCode = ?,
+                    EmergencyContactName = ?,
+                    EmergencyContactRelation = ?,
+                    EmergencyContactEmail = ?,
+                    EmergencyContactPhone = ?
+                    WHERE ID = ?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone(), $emp->GetID()]);
 
             $this->conn = null;
 

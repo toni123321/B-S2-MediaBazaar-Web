@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
+.msg {
+  display: block;
+  margin-bottom:10px;
+}
+
+
 :root {
   --gray-background: #2f2f2f;
   --yellow-background: #fdec51;
@@ -108,9 +114,8 @@ textarea {
     "email phoneNumber"
     "street city"
     "country postCode"
-    "bsn emConName"
-    "emConRelation emConEmail"
-    "emConPhone emConPhone";
+    "emConName emConRelation"
+    "emConEmail emConPhone";
     /* "email phoneNumber"
     "street city"
     "country postCode"
@@ -139,7 +144,6 @@ textarea {
       "city city"
       "country country"
       "postCode postCode"
-      "bsn bsn"
       "emConName emConName"
       "emConRelation emConRelation"
       "emConEmail emConEmail"

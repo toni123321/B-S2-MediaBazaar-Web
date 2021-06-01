@@ -33,7 +33,7 @@ class Employee {
 
     private $shifts = array();
 
-    public function __construct($id, $firstName, $lastName, $dateOfBirth, $gender, $email, $phoneNumber, $street, $city, $country, $postcode, $bsn, $emConName, $emConRelation, $emConEmail, $emConPhoneNum, $employmentType, $hourlyWages, $department, $remainingHolidayDays)
+    public function __construct($id, $firstName, $lastName, $dateOfBirth, $gender, $email, $phoneNumber, $street, $city, $country, $postcode, $emConName, $emConRelation, $emConEmail, $emConPhoneNum, $employmentType, $hourlyWages, $department, $remainingHolidayDays)
     {
         $this->id = $id;
         $this->firstName = $firstName;
@@ -46,7 +46,6 @@ class Employee {
         $this->city = $city;
         $this->country = $country;
         $this->postcode = $postcode;
-        $this->bsn = $bsn;
         $this->emConName = $emConName;
         $this->emConRelation = $emConRelation;
         $this->emConEmail = $emConEmail;
@@ -57,9 +56,6 @@ class Employee {
         $this->remainingHolidayDays = $remainingHolidayDays;
 
     }
-
-
-
     public function GetID()
     {
         return $this->id;
@@ -75,8 +71,6 @@ class Employee {
         $this->firstName = $firstName;
     }
 
-
-
     public function GetLastName()
     {
         return $this->lastName;
@@ -85,8 +79,6 @@ class Employee {
     {
         $this->lastName = $lastName;
     }
-
-
 
     public function GetDateOfBirth()
     {
@@ -97,9 +89,6 @@ class Employee {
         $this->dateOfBirth = $dateOfBirth;
     }
 
-
-
-
     public function GetGender()
     {
         return $this->firstName;
@@ -108,10 +97,6 @@ class Employee {
     {
         $this->gender = $gender;
     }
-
-
-
-
     public function GetEmail()
     {
         return $this->email;
@@ -121,9 +106,6 @@ class Employee {
         $this->email = $email;
     }
 
-
-
-
     public function GetPhoneNumber()
     {
         return $this->phoneNumber;
@@ -132,10 +114,6 @@ class Employee {
     {
         $this->phoneNumber = $phoneNumber;
     }
-
-
-
-
     public function GetStreet()
     {
         return $this->firstName;
@@ -144,8 +122,6 @@ class Employee {
     {
         $this->street = $street;
     }
-
-
 
     public function GetCity()
     {
@@ -156,8 +132,6 @@ class Employee {
         $this->city = $city;
     }
 
-
-
     public function GetCountry()
     {
         return $this->country;
@@ -167,9 +141,6 @@ class Employee {
         $this->country = $country;
     }
 
-
-
-
     public function GetPostCode()
     {
         return $this->postcode;
@@ -178,20 +149,6 @@ class Employee {
     {
         $this->postcode = $postcode;
     }
-
-
-
-    public function GetBSN()
-    {
-        return $this->bsn;
-    }
-    public function SetBSN($bsn)
-    {
-        $this->bsn = $bsn;
-    }
-
-
-
 
     public function GetEmConName()
     {

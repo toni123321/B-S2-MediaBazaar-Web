@@ -9,7 +9,6 @@ if(isset($_SESSION['loggedUser']))
   $phoneNumber = $_POST['phoneNumber'];
   $country = $_POST['country'];
   $city = $_POST['city'];
-  $bsn = $_POST['bsn'];
   $emConName = $_POST['emConName'];
   $emConRelation = $_POST['emConRelation'];
   $emConEmail = $_POST['emConEmail'];
@@ -19,14 +18,30 @@ if(isset($_SESSION['loggedUser']))
   //echo $email;
 
   $currEmp = unserialize($_SESSION['loggedUser']);
-  $newEmp = new Employee($currEmp->GetID(), $currEmp->GetFirstName(), $currEmp->GetLastName(), $currEmp->GetDateOfBirth(), $currEmp->GetGender(), $email, $phoneNumber, $street, $city, $country, $postCode, $bsn, $emConName, $emConRelation, $emConEmail, $emConPhoneNum, $currEmp->GetEmploymentType(), $currEmp->GetHourlyWages(), $currEmp->GetDepartment(), $currEmp->GetRemainingHolidayDays());
-  $employee_manager = new EmployeeManager();
-  $employee_manager->UpdateEmployee($newEmp);
+  $editedEmp = new Employee($currEmp->GetID(), $currEmp->GetFirstName(), $currEmp->GetLastName(), $currEmp->GetDateOfBirth(), $currEmp->GetGender(), $email, $phoneNumber, $street, $city, $country, $postCode, $emConName, $emConRelation, $emConEmail, $emConPhoneNum, $currEmp->GetEmploymentType(), $currEmp->GetHourlyWages(), $currEmp->GetDepartment(), $currEmp->GetRemainingHolidayDays());
 
-  $_SESSION['loggedUser'] = serialize($employee_manager->GetEmployee($newEmp->GetID()));
+
+  $dbHelper = new DbHelper();
+  $isRequestAlreadySent = $dbHelper->IsAccountEditRequestSent($editedEmp->GetID());
+  echo $isRequestAlreadySent;
+  //echo $dbHelper->IsAccountEditRequestSent($editedEmp->GetID());
+  if($isRequestAlreadySent == true)
+  {
+    $dbHelper->UpdateAccountEditRequest($editedEmp);
+  }
+  else {
+    $dbHelper->SendAccountEditRequest($editedEmp);
+  }
+
+  //$employee_manager = new EmployeeManager();
+  //$employee_manager->UpdateEmployee($newEmp);
+
+  //$_SESSION['loggedUser'] = serialize($employee_manager->GetEmployee($newEmp->GetID()));
   //$test = unserialize($_SESSION['loggedUser']);
   //echo $test->GetEmConName();
-  header("Location: ../HTML-PHP/homepage.php");
+  $_SESSION['edit-account-details-msg'] = "Your request has been sent to HR team!";
+  header("Location: ../HTML-PHP/accountPage.php");
+  exit();
 }
 
 ?>

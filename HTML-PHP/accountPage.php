@@ -19,8 +19,8 @@
     {
       $currEmp = unserialize($_SESSION['loggedUser']);
     }
-
   ?>
+
   <div class="back-container">
     <div class="top">
       <p>Account settings</p>
@@ -62,11 +62,11 @@
           <input type="text" name = "postCode" id="postCode" placeholder="Enter your post code" value="<?php echo $currEmp->GetPostCode()?>"/>
         </div>
 
-
-        <div class="bsn">
-          <label for="bsn">Bsn</label>
-          <input type="bsn" name="bsn" id="bsn" placeholder="Enter your Bsn number" value="<?php echo $currEmp->GetBSN()?>"/>
-        </div>
+<!---->
+<!--        <div class="bsn">-->
+<!--          <label for="bsn">Bsn</label>-->
+<!--          <input type="bsn" name="bsn" id="bsn" placeholder="Enter your Bsn number" value="--><?php //echo $currEmp->GetBSN()?><!--"/>-->
+<!--        </div>-->
 
         <div class="emConName">
           <label for="emConName">Emergency contact name</label>
@@ -96,6 +96,21 @@
   </div>
   <script src="../JavaScript/reloadAccountPageHandling.js"></script>
 
-  <script src="../JavaScript/successAccountMsgHandling.js"></script>
+  <?php
+    if(isset($_SESSION['edit-account-details-msg']))
+    {
+        $msg = (string) $_SESSION['edit-account-details-msg'];
+        //echo "<h2 class='msg'>{$msg}</h2>";
+    ?>
+
+        <script type="text/javascript">
+            let msg = <?php echo json_encode($msg); ?>;
+            alert(msg);
+        </script>
+
+        <?php
+        unset($_SESSION['edit-account-details-msg']);
+    }
+    ?>
 </body>
 </html>
