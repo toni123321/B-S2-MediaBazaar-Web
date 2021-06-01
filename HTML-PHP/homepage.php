@@ -1,12 +1,8 @@
-
-
-<?php include '../Logic/EmployeeManager.php';?>
+<?php include '../Handling/timeUntilNextShift.php';?>
 <?php
-session_start();
 if(isset($_SESSION['loggedUser']))
 {
   $currEmp = unserialize($_SESSION['loggedUser']);
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -21,7 +17,16 @@ if(isset($_SESSION['loggedUser']))
     <div class="content">
         <div class="welcome-text">
             <h2>Welcome, <?php echo $currEmp->GetFirstName(); ?></h2>
-            <p>Your next shift starts in [days] and [hours]</p>
+            <?php
+                if(isset($_SESSION['nextShiftTime'])) {
+                    $nextShift = unserialize($_SESSION['nextShiftTime']);
+                    echo "<p>Your next shift starts at {$nextShift->format('g:i')} on {$nextShift->format('j M, Y')} ({$nextShift->format('l')})</p>";
+                }
+                else{
+                    echo '<p>You have no upcoming shifts</p>';
+                }
+            ?>
+
         </div>
         <div class="btnview">
 <!--            <a href="#">View full schedule ></a>-->

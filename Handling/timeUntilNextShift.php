@@ -42,11 +42,11 @@ if(isset($_SESSION['loggedUser']))
         {
             $shiftDate->setTime(17, 00);
         }
+        $_SESSION['nextShiftTime'] = serialize($shiftDate);
     }
-
-    echo $nextShift->GetId();
-    echo '<br>';
-    echo $shiftDate->format('Y-m-d H:i:s');
+    else{
+        unset($_SESSION['nextShiftTime']);
+    }
 
 }
 
