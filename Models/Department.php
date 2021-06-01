@@ -25,23 +25,23 @@ class Department
     {
         return $this->name;
     }
+//
+//    public function SetManager($manager)
+//    {
+//        $this->manager = $manager;
+//    }
+//
+//    public function GetManager()
+//    {
+//        return $this->manager;
+//    }
 
-    public function SetManager($manager)
-    {
-        $this->manager = $manager;
-    }
 
-    public function GetManager()
-    {
-        return $this->manager;
-    }
-
-
-    public function __construct($id, $name, $manager)
+    public function __construct($id, $name)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->manager=$manager;
+        //$this->manager=$manager;
     }
 
 

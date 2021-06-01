@@ -13,6 +13,7 @@
 .navbar a {
     font-size: clamp(35px, 4.5vw, 50px);
 }
+
 #logo {
     width:clamp(120px, 20vw, 200px);
     height:30vh;

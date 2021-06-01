@@ -11,6 +11,7 @@ if(isset($_SESSION['loggedUser']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
     <link rel="stylesheet" href="../CSS/homepage-style.css">
+    <script src="../Libraries/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <?php include 'main.php';?>
@@ -36,6 +37,7 @@ if(isset($_SESSION['loggedUser']))
             </h2>
         </div>
     </div>
+    <script src="../JavaScript/autoRefreshHomepage.js"></script>
 </body>
 </html>
 <?php

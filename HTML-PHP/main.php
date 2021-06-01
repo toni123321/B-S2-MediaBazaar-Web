@@ -20,7 +20,7 @@
             <div class="progress_bar_container">
                 <div class="progress_bar"></div>
             </div>
-            <a href="#"><i class="fa fa-fw fa-home"></i></a>
+            <a href="../HTML-PHP/homepage.php"><i class="fa fa-fw fa-home"></i></a>
             <a href="#"><i class="fa fa-calendar"></i></a>
             <a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user account"></i></a>
 
