@@ -6,6 +6,7 @@ class Department
     //Fields
     private $id;
     private $name;
+    private $manager;
 
     //Properties
     public function GetID()
@@ -36,11 +37,11 @@ class Department
     }
 
 
-    public function __construct($id, $name)
+    public function __construct($id, $name, $manager)
     {
         $this->id = $id;
         $this->name = $name;
-        // $this->manager = $manager;
+        $this->manager=$manager;
     }
 
 
