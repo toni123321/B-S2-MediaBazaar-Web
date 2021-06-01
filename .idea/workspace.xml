@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="deleted a file that was uploaded by a mistake">
+      <change afterPath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Enums/Gender.php" beforeDir="false" />
+    </list>
+    <list id="97b5da85-934f-46f2-9938-94b94f8b101f" name="Changes by Dinospino" comment="">
+      <change beforePath="$PROJECT_DIR$/Models/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Department.php" afterDir="false" />
+    </list>
+    <list id="38f24340-5179-4fdd-8f41-7ca64150a0df" name="Changes by tonit" comment="">
+      <change afterPath="$PROJECT_DIR$/Logic/ShiftManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/Shift.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/DbHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DbHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/EmployeeManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/EmployeeManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +37,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\XAMPP\htdocs\s2-prj-cb03-1-webiste\Models" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -40,7 +61,7 @@
       <workItem from="1621319444869" duration="32000" />
       <workItem from="1621441090255" duration="92000" />
       <workItem from="1622329668703" duration="136000" />
-      <workItem from="1622535175817" duration="377000" />
+      <workItem from="1622535175817" duration="7441000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -49,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622329768415</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="deleted a file that was uploaded by a mistake">
+      <created>1622535587865</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622535587865</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
