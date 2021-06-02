@@ -124,10 +124,11 @@ class DbHelper {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sql = "SELECT count(*) FROM pending_changed_details 
-                    WHERE ID=?";
+                    WHERE ID=? and Status=?";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$id]);
+            $status = "InProgress";
+            $stmt->execute([$id, $status]);
             $result = $stmt->fetchColumn();
 
 
@@ -144,7 +145,7 @@ class DbHelper {
         return $isRequestSent;
     }
 
-    public function SendAccountEditRequest($emp)
+    public function SendAccountEditRequest($emp, DateTime $requestDate)
     {
         try {
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
@@ -154,11 +155,12 @@ class DbHelper {
                     pending_changed_details
                     (ID, Email, PhoneNumber, Street, City, Country, PostCode, 
                      EmergencyContactName, EmergencyContactRelation, EmergencyContactEmail, 
-                     EmergencyContactPhone) 
-                    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                     EmergencyContactPhone, Status, RequestDate) 
+                    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$emp->GetId(), $emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone()]);
+            $defaultStatus = "InProgress";
+            $stmt->execute([$emp->GetId(), $emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone(), $defaultStatus, $requestDate->format('Y-m-d H:i:s')]);
 
             $this->conn = null;
 
@@ -167,7 +169,7 @@ class DbHelper {
         }
     }
 
-    public function UpdateAccountEditRequest($emp)
+    public function UpdateAccountEditRequest($emp, $newRequestDate)
     {
         try {
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
@@ -182,12 +184,13 @@ class DbHelper {
                     PostCode = ?,
                     EmergencyContactName = ?,
                     EmergencyContactRelation = ?,
-                    EmergencyContactEmail = ?,
-                    EmergencyContactPhone = ?
+                    EmergencyContactEmail = ?, 
+                    EmergencyContactPhone = ?, 
+                    RequestDate = ?
                     WHERE ID = ?";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone(), $emp->GetID()]);
+            $stmt->execute([$emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone(), $newRequestDate->format('Y-m-d H:i:s'), $emp->GetID()]);
 
             $this->conn = null;
 

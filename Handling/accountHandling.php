@@ -27,10 +27,14 @@ if(isset($_SESSION['loggedUser']))
   //echo $dbHelper->IsAccountEditRequestSent($editedEmp->GetID());
   if($isRequestAlreadySent == true)
   {
-    $dbHelper->UpdateAccountEditRequest($editedEmp);
+    $dateNowString = date("Y-m-d H:i:s");
+    $newRequestDate = new DateTime($dateNowString);
+    $dbHelper->UpdateAccountEditRequest($editedEmp, $newRequestDate);
   }
   else {
-    $dbHelper->SendAccountEditRequest($editedEmp);
+    $dateNowString = date("Y-m-d H:i:s");
+    $requestDate = new DateTime($dateNowString);
+    $dbHelper->SendAccountEditRequest($editedEmp, $requestDate);
   }
 
   //$employee_manager = new EmployeeManager();
