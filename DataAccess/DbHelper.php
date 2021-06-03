@@ -1,7 +1,6 @@
 
-<?php include '../Models/Department.php'; ?>
-<?php include '../Models/Shift.php'; ?>
-
+<?php include_once '../Models/Department.class.php'; ?>
+<?php include_once '../Models/Shift.class.php'; ?>
 
 <?php
 

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include '../Logic/EmployeeManager.php';
+include_once '../Logic/EmployeeManager.class.php';
 if(isset($_SESSION['loggedUser']))
 {
   $email = $_POST['email'];
@@ -17,7 +17,11 @@ if(isset($_SESSION['loggedUser']))
 
   //echo $email;
 
-  $currEmp = unserialize($_SESSION['loggedUser']);
+  $loggedEmpId = (int)$_SESSION['loggedUserId'];
+
+  $employeeManager = new EmployeeManager();
+  $currEmp = $employeeManager->GetEmployee($loggedEmpId);
+
   $editedEmp = new Employee($currEmp->GetID(), $currEmp->GetFirstName(), $currEmp->GetLastName(), $currEmp->GetDateOfBirth(), $currEmp->GetGender(), $email, $phoneNumber, $street, $city, $country, $postCode, $emConName, $emConRelation, $emConEmail, $emConPhoneNum, $currEmp->GetEmploymentType(), $currEmp->GetHourlyWages(), $currEmp->GetDepartment(), $currEmp->GetRemainingHolidayDays());
 
 

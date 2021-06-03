@@ -1,5 +1,5 @@
 <?php
-include '../DataAccess/DbHelper.php';
+include_once '../DataAccess/DbHelper.php';
 
 class ShiftManager{
     private $shifts = array();

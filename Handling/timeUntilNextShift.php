@@ -1,13 +1,13 @@
-<?php include '../Logic/ShiftManager.php'; ?>
+<?php include_once '../Logic/ShiftManager.class.php'; ?>
 
 <?php
 session_start();
-if(isset($_SESSION['loggedUser']))
+if(isset($_SESSION['loggedUserId']))
 {
-    $loggedInUser = unserialize($_SESSION['loggedUser']);
+    $loggedUserId = (int) $_SESSION['loggedUserId'];
     $shiftManager = new ShiftManager();
 
-    $shifts = $shiftManager->GetAllShiftsEmp($loggedInUser->GetID()); //gets all shift for the logged in employee
+    $shifts = $shiftManager->GetAllShiftsEmp($loggedUserId); //gets all shift for the logged in employee
 
     $dateNowString = date("Y-m-d H:i:s");
     $dateNow = new DateTime($dateNowString);

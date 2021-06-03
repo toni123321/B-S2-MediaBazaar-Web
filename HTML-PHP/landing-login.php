@@ -27,7 +27,7 @@
                 <input class="employeeId" name="employeeId" type="text" align="center" placeholder="Employee id...">
                 <input class="department" list="department" name="departmentName" type="text" align="center" placeholder="Department...">
                 <datalist id="department">
-                    <?php include '../Logic/DepartmentManager.php';?>
+                    <?php include_once '../Logic/DepartmentManager.class.php';?>
                     <?php
                     $departmentManager = new DepartmentManager();
                     $allDepartments = $departmentManager->GetAllDepartments();

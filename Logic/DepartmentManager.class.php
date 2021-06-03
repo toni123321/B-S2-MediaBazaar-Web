@@ -1,4 +1,4 @@
-<?php include '../DataAccess/DbHelper.php'; ?>
+<?php include_once '../DataAccess/DbHelper.php'; ?>
 <?php
 class DepartmentManager
 {

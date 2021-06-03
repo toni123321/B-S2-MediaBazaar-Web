@@ -1,8 +1,16 @@
-<?php include '../Handling/timeUntilNextShift.php';?>
+
 <?php
-if(isset($_SESSION['loggedUser']))
+
+include_once '../Logic/EmployeeManager.class.php';
+include_once '../Handling/timeUntilNextShift.php';
+?>
+<?php
+
+if(isset($_SESSION['loggedUserId']))
 {
-  $currEmp = unserialize($_SESSION['loggedUser']);
+    $employeeManager = new EmployeeManager();
+    $loggedUserId = (int) $_SESSION['loggedUserId'];
+    $currEmp = $employeeManager->GetEmployee($loggedUserId);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -41,8 +49,8 @@ if(isset($_SESSION['loggedUser']))
 </body>
 </html>
 <?php
-  }
-  else{
+}
+else{
     header("Location: ../HTML-PHP/landing-login.php");
-  }
+}
 ?>

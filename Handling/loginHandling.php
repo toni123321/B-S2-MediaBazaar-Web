@@ -1,4 +1,4 @@
-<?php include '../Logic/EmployeeManager.php';?>
+<?php include_once '../Logic/EmployeeManager.class.php';?>
 <?php
   function LoginHandling($employee_id, $email, $departmentName)
   {
@@ -13,9 +13,10 @@
 
       if( $currEmp->GetDepartment()->GetName() == $departmentName && $currEmp->GetEmail() == $email)
       {
-          // TODO: Set session for user to save id
+          // Set session for user to save id
           session_start();
-          $_SESSION['loggedUser'] = serialize($currEmp);
+          //$_SESSION['loggedUser'] = serialize($currEmp);
+          $_SESSION['loggedUserId'] = $currEmp->GetID();
           header("Location: ../HTML-PHP/homepage.php");
       }
       else{
