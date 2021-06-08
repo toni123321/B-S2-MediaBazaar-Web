@@ -70,7 +70,7 @@
       <workItem from="1622329668703" duration="136000" />
       <workItem from="1622535175817" duration="14507000" />
       <workItem from="1622731104570" duration="17000" />
-      <workItem from="1623147838754" duration="13358000" />
+      <workItem from="1623147838754" duration="13394000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -135,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623161178077</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- made the front-end view of the schedule (it is not responsive yet)*&#10;- added JS script getting the selected by the user week without refreshing the page&#10;- changed the auto refresh for the homepage from 5s to 60s&#10;&#10;*the displayed shifts in schedule.php do not exist, they have been added to test the design. The real shifts will be displayed once the handling is ready.">
+      <created>1623161333668</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1623161333668</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

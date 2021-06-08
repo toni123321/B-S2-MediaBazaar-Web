@@ -32,7 +32,7 @@ if(isset($_SESSION['loggedUserId']))
                     echo "<p>Your next shift starts at {$nextShift->format('g:i')} on {$nextShift->format('j M, Y')} ({$nextShift->format('l')})</p>";
                 }
                 else{
-                    echo '<p>You have no upcoming shifts</p>';
+                    echo '<p>There are no upcoming shifts. Have fun!</p>';
                 }
             ?>
 
