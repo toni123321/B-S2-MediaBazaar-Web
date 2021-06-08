@@ -33,7 +33,7 @@ class Employee {
 
     private $shifts = array();
 
-    public function __construct($id, $firstName, $lastName, $dateOfBirth, $gender, $email, $phoneNumber, $street, $city, $country, $postcode, $emConName, $emConRelation, $emConEmail, $emConPhoneNum, $employmentType, $hourlyWages, $department, $remainingHolidayDays)
+    public function __construct($id, $firstName, $lastName, $dateOfBirth, $gender, $email, $phoneNumber, $street, $city, $country, $postcode, $emConName, $emConRelation, $emConEmail, $emConPhoneNum, $employmentType, $hourlyWages, $department)
     {
         $this->id = $id;
         $this->firstName = $firstName;
@@ -53,7 +53,6 @@ class Employee {
         $this->employmentType = $employmentType;
         $this->hourlyWages = $hourlyWages;
         $this->department = $department;
-        $this->remainingHolidayDays = $remainingHolidayDays;
 
     }
     public function GetID()

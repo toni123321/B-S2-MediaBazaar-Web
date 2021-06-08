@@ -46,6 +46,7 @@ if(isset($_SESSION['loggedUserId']))
         </div>
     </div>
     <script src="../JavaScript/autoRefreshHomepage.js"></script>
+    <script src="../JavaScript/processProgressBar.js"></script>
 </body>
 </html>
 <?php

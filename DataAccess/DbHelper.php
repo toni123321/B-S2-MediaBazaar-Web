@@ -65,14 +65,13 @@ class DbHelper {
                 $hourlyWages = $row['HourlyWages'];
                 $departmentID = $row['DepartmentID'];
 
-                $remainingHolidayDays = $row['RemainingHolidayDays'];
                 $depName = $row['DepName'];
 
                 $department = new Department($departmentID, $depName);
 
                 $employee = new Employee($id, $firstName, $lastName, $dateOfBirth, $gender, $email,
                 $phoneNumber, $street, $city, $country, $postcode, $emConName, $emConRelation,
-                $emConEmail, $emConPhoneNum, $employmentType, $hourlyWages, $department, $remainingHolidayDays);
+                $emConEmail, $emConPhoneNum, $employmentType, $hourlyWages, $department);
 
                 $employees[] = $employee;
             }
