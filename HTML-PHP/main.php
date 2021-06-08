@@ -21,7 +21,7 @@
             </div>
             <a id="a1" href="../HTML-PHP/homepage.php"><i class="fa fa-fw fa-home"></i></a>
             <a href="#"><i class="fa fa-calendar"></i></a>
-            <a href="#"><i class="fas fa-plane"></i></a>
+            <a href="#"><i class="fas fa-plane fa-rotate-270"></i></a>
             <a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user account"></i></a>
             <a href="../Handling/logoutHandling.php"><i class="fas fa-sign-out-alt"></i></a>
 

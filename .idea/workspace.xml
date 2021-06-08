@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="made a handle for the homepage next shift info">
-      <change afterPath="$PROJECT_DIR$/Images/calendar-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaScript/autoRefreshHomepage.js" afterDir="false" />
+    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="added auto refresh for the homepage">
+      <change afterPath="$PROJECT_DIR$/CSS/schedule.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML-PHP/schedule.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML-PHP/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTML-PHP/homepage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Department.php" afterDir="false" />
-    </list>
-    <list id="38f24340-5179-4fdd-8f41-7ca64150a0df" name="Changes by tonit" comment="Changes by Antonio Takev">
       <change beforePath="$PROJECT_DIR$/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML-PHP/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTML-PHP/homepage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTML-PHP/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTML-PHP/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Department.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/autoRefreshHomepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/autoRefreshHomepage.js" afterDir="false" />
     </list>
+    <list id="38f24340-5179-4fdd-8f41-7ca64150a0df" name="Changes by tonit" comment="Changes by Antonio Takev" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +21,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -33,27 +29,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/HTML-PHP/homepage.php">
-      <ranges>
-        <range start1="0" end1="3" start2="0" end2="1" changelist="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" />
-        <range start1="4" end1="5" start2="2" end2="2" changelist="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" />
-        <range start1="8" end1="9" start2="5" end2="5" changelist="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" />
-        <range start1="17" end1="17" start2="13" end2="14" changelist="38f24340-5179-4fdd-8f41-7ca64150a0df" />
-        <range start1="23" end1="24" start2="20" end2="30" changelist="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" />
-        <range start1="33" end1="33" start2="39" end2="40" changelist="38f24340-5179-4fdd-8f41-7ca64150a0df" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/Models/Department.php">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" />
-        <range start1="27" end1="32" start2="27" end2="37" changelist="38f24340-5179-4fdd-8f41-7ca64150a0df" />
-        <range start1="33" end1="37" start2="38" end2="38" changelist="38f24340-5179-4fdd-8f41-7ca64150a0df" />
-        <range start1="38" end1="40" start2="39" end2="40" changelist="38f24340-5179-4fdd-8f41-7ca64150a0df" />
-        <range start1="43" end1="44" start2="43" end2="44" changelist="38f24340-5179-4fdd-8f41-7ca64150a0df" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1shKZnotrqOPHaEbkmcAtuIhXQ9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -69,7 +44,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../s2-wad" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -92,7 +68,9 @@
       <workItem from="1621319444869" duration="32000" />
       <workItem from="1621441090255" duration="92000" />
       <workItem from="1622329668703" duration="136000" />
-      <workItem from="1622535175817" duration="13249000" />
+      <workItem from="1622535175817" duration="14507000" />
+      <workItem from="1622731104570" duration="17000" />
+      <workItem from="1623147838754" duration="13059000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -129,7 +107,28 @@
       <option name="project" value="LOCAL" />
       <updated>1622542733183</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added auto refresh for the homepage">
+      <created>1622548608650</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1622548608650</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Changes by Antonio Takev">
+      <created>1622548620679</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1622548620679</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Changes by Antonio Takev">
+      <created>1622552035779</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1622552035779</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,8 +150,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="deleted a file that was uploaded by a mistake" />
     <MESSAGE value="made a handle for the homepage next shift info" />
-    <MESSAGE value="Changes by Antonio Takev" />
     <MESSAGE value="Changes by Mihail Bogdanov" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Mihail Bogdanov" />
+    <MESSAGE value="added auto refresh for the homepage" />
+    <MESSAGE value="Changes by Antonio Takev" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Antonio Takev" />
   </component>
 </project>
