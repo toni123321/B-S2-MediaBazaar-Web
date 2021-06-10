@@ -2,9 +2,20 @@ body{
     font-family: Segoe UI, Helvetica, sans-serif;
 }
 
+
+span {
+    display: none;
+    font-size: 25px;
+}
+
+.active {
+    border-bottom: 5px solid white;
+}
+
+
 .header {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     align-items: center;
     justify-items: center;
 }
@@ -14,8 +25,11 @@ body{
 }
 
 .navbar a {
-    font-size: clamp(35px, 4.5vw, 50px);
+    font-size: clamp(25px, 4.5vw, 50px);
+    text-decoration: none;
+    padding: 15px;
 }
+
 
 #logo {
     width:clamp(120px, 20vw, 200px);
@@ -26,7 +40,15 @@ body{
 }
 
 .navbar a:not(:last-child) {
-    margin-right:clamp(20px, 3.5vw ,70px);
+    /*margin-right:clamp(5px, 1vw ,70px);*/
+}
+
+
+a:hover i{
+    display: none;
+}
+a:hover span{
+    display: unset;
 }
 
 
@@ -61,3 +83,5 @@ body{
     width: 15%;
     margin-left: 0%;
 }
+
+

@@ -14,7 +14,7 @@ if(isset($_SESSION['loggedUserId']))
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home page</title>
+        <title>Schedule</title>
         <link rel="stylesheet" href="../CSS/homepage-style.css">
         <link rel="stylesheet" href="../CSS/schedule.css">
 
