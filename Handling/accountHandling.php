@@ -2,7 +2,7 @@
 
 session_start();
 include_once '../Logic/EmployeeManager.class.php';
-if(isset($_SESSION['loggedUser']))
+if(isset($_SESSION['loggedUserId']))
 {
   $email = $_POST['email'];
   $street = $_POST['street'];

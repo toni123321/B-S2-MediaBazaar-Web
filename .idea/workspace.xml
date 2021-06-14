@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="selecting weeks in schedule with arrows" />
+    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="added files for working on the HLR">
+      <change afterPath="$PROJECT_DIR$/Handling/HLR-info-handling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/DbHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DbHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handling/HLR-handling.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/HLR-form-handling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handling/accountHandling.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/accountHandling.php" afterDir="false" />
+    </list>
     <list id="38f24340-5179-4fdd-8f41-7ca64150a0df" name="Changes by tonit" comment="Changes by Antonio Takev" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -65,7 +71,7 @@
       <workItem from="1622731104570" duration="17000" />
       <workItem from="1623147838754" duration="13394000" />
       <workItem from="1623161404337" duration="1314000" />
-      <workItem from="1623676149471" duration="3192000" />
+      <workItem from="1623676149471" duration="8130000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -151,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623679053305</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added files for working on the HLR">
+      <created>1623679436753</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1623679436753</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +191,7 @@
     <MESSAGE value="Changes by Antonio Takev" />
     <MESSAGE value="- made the front-end view of the schedule (it is not responsive yet)*&#10;- added JS script getting the selected by the user week without refreshing the page&#10;- changed the auto refresh for the homepage from 5s to 60s&#10;&#10;*the displayed shifts in schedule.php do not exist, they have been added to test the design. The real shifts will be displayed once the handling is ready." />
     <MESSAGE value="selecting weeks in schedule with arrows" />
-    <option name="LAST_COMMIT_MESSAGE" value="selecting weeks in schedule with arrows" />
+    <MESSAGE value="added files for working on the HLR" />
+    <option name="LAST_COMMIT_MESSAGE" value="added files for working on the HLR" />
   </component>
 </project>
