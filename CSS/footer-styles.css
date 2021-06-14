@@ -1,0 +1,43 @@
+
+
+/*footer {
+    !*position: absolute;
+    top: 90vh;
+    left: 50%;
+    transform: translate(-50%, -50%);*!
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}*/
+/*html,body{*/
+/*    height: 100%*/
+/*}*/
+
+/*#holder{*/
+/*    min-height: 100%;*/
+/*    position:relative;*/
+/*}*/
+
+/*#body{*/
+/*    padding-bottom: 100px;*/
+/*}*/
+
+footer {
+    width:100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+
+
+#logo {
+    width:clamp(120px, 20vw, 200px);
+    height:30vh;
+    background-image: url("../Images/MediaBazaarLogo.png");
+    background-repeat: no-repeat;
+    background-size: clamp(120px, 20vw, 200px) 30vh;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -23,6 +23,7 @@ if(isset($_SESSION['loggedUserId']))
 
 
 <body>
+
   <div class="back-container">
     <div class="top">
       <p>Account settings</p>
@@ -114,6 +115,7 @@ if(isset($_SESSION['loggedUserId']))
         unset($_SESSION['edit-account-details-msg']);
     }
     ?>
+
 </body>
 </html>
 

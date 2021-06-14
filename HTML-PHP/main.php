@@ -10,17 +10,13 @@
     <link rel="stylesheet" href="../CSS/main.css">
 </head>
 <body>
-    <div class="header">
-        <div class="grid-items" id="logo"></div>
-
-        <nav class="navbar grid-items">
-            <a id="home" class="active" href="../HTML-PHP/homepage.php"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
-            <a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user account"></i><span>Account</span></a>
-            <a id="schedule" href="../HTML-PHP/schedule.php"><i class="fa fa-calendar"></i><span>Schedule</span></a>
-            <a href="#"><i class="fas fa-plane fa-rotate-270"></i><span>Holiday Requests</span></a>
-            <a href="../Handling/logoutHandling.php"><i class="fas fa-sign-out-alt"></i><span>Log out</span></a>
-        </nav>
-    </div>
+    <nav class="navbar grid-items">
+        <a id="home" class="active" href="../HTML-PHP/homepage.php"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
+        <a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user account"></i><span>Account</span></a>
+        <a id="schedule" href="../HTML-PHP/schedule.php"><i class="fa fa-calendar"></i><span>Schedule</span></a>
+        <a href="#"><i class="fas fa-plane fa-rotate-270"></i><span>Holiday Requests</span></a>
+        <a href="../Handling/logoutHandling.php"><i class="fas fa-sign-out-alt"></i><span>Log out</span></a>
+    </nav>
 <!--    <script src="../JavaScript/processIconText.js"></script>-->
     <script src="../JavaScript/markActiveMenuItem.js"></script>
 

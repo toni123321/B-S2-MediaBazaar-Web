@@ -1,5 +1,6 @@
 body {
-    background-color: #6FB3B8;
+    background-color: #99CED3;
+    margin: 0;
 }
 
 .content {
@@ -7,9 +8,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /*background-color: lightblue;*/
     color: #fff;
-    height: auto;
     text-align: center;
     font-size: 18px;
 }
