@@ -23,11 +23,11 @@ if(isset($_SESSION['loggedUserId']))
     <body>
     <?php include 'main.php';?>
     <div class="weekSelector">
-        <a href="#" class="pointer arrow"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" class="pointer arrow down"><i class="fas fa-arrow-left"></i></a>
         <select name="weeks" id="weeks">
             <?php include '../Handling/addWeeks.php';?>
         </select>
-        <a href="#" class="pointer arrow"><i class="fas fa-arrow-right"></i></a>
+        <a href="#" class="pointer arrow up"><i class="fas fa-arrow-right"></i></a>
     </div>
     <div class="flex-container">
         <div class="weekDayTile">
@@ -89,6 +89,7 @@ if(isset($_SESSION['loggedUserId']))
         </div>
     </div>
     <script src="../JavaScript/showShiftForSelectedWeek.js"></script>
+    <script src="../JavaScript/weekUpDownSelector.js"></script>
     </body>
     </html>
     <?php
