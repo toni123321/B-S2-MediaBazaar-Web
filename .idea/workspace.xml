@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="- made the front-end view of the schedule (it is not responsive yet)*&#10;- added JS script getting the selected by the user week without refreshing the page&#10;- changed the auto refresh for the homepage from 5s to 60s&#10;&#10;*the displayed shifts in schedule.php do not exist, they have been added to test the design. The real shifts will be displayed once the handling is ready.">
-      <change afterPath="$PROJECT_DIR$/JavaScript/weekUpDownSelector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML-PHP/schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTML-PHP/schedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/showShiftForSelectedWeek.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/showShiftForSelectedWeek.js" afterDir="false" />
-    </list>
+    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="selecting weeks in schedule with arrows" />
     <list id="38f24340-5179-4fdd-8f41-7ca64150a0df" name="Changes by tonit" comment="Changes by Antonio Takev" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +65,7 @@
       <workItem from="1622731104570" duration="17000" />
       <workItem from="1623147838754" duration="13394000" />
       <workItem from="1623161404337" duration="1314000" />
-      <workItem from="1623676149471" duration="2860000" />
+      <workItem from="1623676149471" duration="3192000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -149,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623161420589</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="selecting weeks in schedule with arrows">
+      <created>1623679053305</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1623679053305</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +177,7 @@
     <MESSAGE value="added auto refresh for the homepage" />
     <MESSAGE value="Changes by Antonio Takev" />
     <MESSAGE value="- made the front-end view of the schedule (it is not responsive yet)*&#10;- added JS script getting the selected by the user week without refreshing the page&#10;- changed the auto refresh for the homepage from 5s to 60s&#10;&#10;*the displayed shifts in schedule.php do not exist, they have been added to test the design. The real shifts will be displayed once the handling is ready." />
-    <option name="LAST_COMMIT_MESSAGE" value="- made the front-end view of the schedule (it is not responsive yet)*&#10;- added JS script getting the selected by the user week without refreshing the page&#10;- changed the auto refresh for the homepage from 5s to 60s&#10;&#10;*the displayed shifts in schedule.php do not exist, they have been added to test the design. The real shifts will be displayed once the handling is ready." />
+    <MESSAGE value="selecting weeks in schedule with arrows" />
+    <option name="LAST_COMMIT_MESSAGE" value="selecting weeks in schedule with arrows" />
   </component>
 </project>
