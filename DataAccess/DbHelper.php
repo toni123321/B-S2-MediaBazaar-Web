@@ -270,6 +270,69 @@ class DbHelper {
         return $shifts;
     }
 
+    public function GetReaminingHolidayDays($id){
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT RemainingHolidayDays FROM remaining_holiday_days WHERE EmployeeID = ?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$id]);
+            $result = $stmt->fetchColumn();
+
+
+            // Close DB connection
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+        return $result;
+    }
+
+    public function GetUsedHolidayDays($id){
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT TotalDays FROM holiday_leave_request WHERE EmployeeID = ? AND Status = 'Accepted'";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$id]);
+            $result = $stmt->fetchColumn();
+
+
+            // Close DB connection
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+        return $result;
+    }
+
+    public function InsertHLR($id, $startDate, $endDate, $totalDays, $comment){
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "INSERT INTO holiday_leave_request(EmployeeID, StartDay, EndDay, TotalDays, Status, Comments) 
+                    VALUES(?, ?, ?, ?, ?, ?)";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$id, $startDate, $endDate, $totalDays, $comment, 3, $comment]);
+            // Close DB connection
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
 
 
 }
