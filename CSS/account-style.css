@@ -25,12 +25,11 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background: var(--gray-background);
-  background-color: #6FB3B8;
-  display: flex;
+  background-color: #99CED3;
+  /*display: flex;
   height: 100vh;
   overflow: hidden;
-  overflow-y: scroll;
+  overflow-y: scroll;*/
 }
 
 button {
@@ -92,7 +91,7 @@ textarea {
   background: #fff;
   box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.3);
 
-  width: 760px;
+  width: 550px;
   position: relative;
   margin: auto;
 }
