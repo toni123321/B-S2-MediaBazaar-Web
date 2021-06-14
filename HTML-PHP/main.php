@@ -7,27 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-
     <link rel="stylesheet" href="../CSS/main.css">
-    <title>Main</title>
 </head>
 <body>
     <div class="header">
         <div class="grid-items" id="logo"></div>
 
-        <div class="navbar grid-items">
-            <div class="progress_bar_container">
-                <div class="progress_bar"></div>
-            </div>
-            <a id="a1" href="../HTML-PHP/homepage.php"><i class="fa fa-fw fa-home"></i></a>
-            <a href="#"><i class="fa fa-calendar"></i></a>
-            <a href="#"><i class="fas fa-plane fa-rotate-270"></i></a>
-            <a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user account"></i></a>
-            <a href="../Handling/logoutHandling.php"><i class="fas fa-sign-out-alt"></i></a>
-
-        </div>
+        <nav class="navbar grid-items">
+            <a id="home" class="active" href="../HTML-PHP/homepage.php"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
+            <a href="../HTML-PHP/accountPage.php"><i class="fa fa-fw fa-user account"></i><span>Account</span></a>
+            <a id="schedule" href="../HTML-PHP/schedule.php"><i class="fa fa-calendar"></i><span>Schedule</span></a>
+            <a href="#"><i class="fas fa-plane fa-rotate-270"></i><span>Holiday Requests</span></a>
+            <a href="../Handling/logoutHandling.php"><i class="fas fa-sign-out-alt"></i><span>Log out</span></a>
+        </nav>
     </div>
 <!--    <script src="../JavaScript/processIconText.js"></script>-->
+    <script src="../JavaScript/markActiveMenuItem.js"></script>
 
 </body>
 </html>
