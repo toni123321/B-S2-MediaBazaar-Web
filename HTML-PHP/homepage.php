@@ -47,7 +47,7 @@ if(isset($_SESSION['loggedUserId']))
     </div>
 
     <?php include '../HTML-PHP/footer.php'; ?>
-<!--    <script src="../JavaScript/autoRefreshHomepage.js"></script>-->
+    <script src="../JavaScript/autoRefreshHomepage.js"></script>
     <script src="../JavaScript/processProgressBar.js"></script>
 </body>
 </html>

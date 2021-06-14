@@ -8,7 +8,8 @@
 </head>
 <body>
     <footer>
-        <div class="grid-items" id="logo"></div>
+        <img src="../Images/MediaBazaarLogo.png" alt="Logo" id="logo">
+<!--        <div class="grid-items" id="logo"></div>-->
     </footer>
 </body>
 </html>

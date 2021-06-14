@@ -2,7 +2,7 @@ body{
     font-family: Segoe UI, Helvetica, sans-serif;
 }
 
-span {
+.grid-items > a > span {
     display: none;
     font-size: 25px;
 }

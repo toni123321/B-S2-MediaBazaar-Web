@@ -7,3 +7,7 @@ else if(current_title == "Schedule") {
     $('nav a').removeClass('active');
     $('#schedule').addClass('active');
 }
+else if(current_title == "HolidayLeaveRequests") {
+    $('nav a').removeClass('active');
+    $('#holidayLeaveRequest').addClass('active');
+}

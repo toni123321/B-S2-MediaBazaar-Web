@@ -1,0 +1,58 @@
+body {
+    background-color: #99CED3;
+    margin: 0;
+}
+
+
+
+.fa-times {
+    font-size: 25px;
+}
+
+/*
+
+
+input,
+textarea {
+    outline: none;
+    border-style: none;
+    border-bottom: 1px groove var(--light-gray);
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+*/
+
+
+.front-container {
+    margin-top: 10%;
+    margin-left:auto;
+    margin-right:auto;
+    background: white;
+    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.3);
+
+    width: 550px;
+    position: relative;
+}
+
+.front-container img {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 70px;
+    position: absolute;
+    top: -35px;
+    left: 40px;
+}
+
+.front-container .form-group {
+    padding-block: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+label[for=from], label[for=to], #from {
+
+    margin-right: 20px;
+}
+
