@@ -32,27 +32,76 @@ textarea {
     background: white;
     box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.3);
 
-    width: 550px;
+    width: clamp(300px, 80vw, 600px);
     position: relative;
+}
+
+@media screen and (max-width: 600px) {
+    .front-container {
+        margin-top: 20%;
+    }
 }
 
 .front-container img {
     border: 1px solid black;
     border-radius: 50%;
-    width: 70px;
+    width: clamp(58px, 8vw, 70px);
     position: absolute;
     top: -35px;
     left: 40px;
 }
 
-.front-container .form-group {
-    padding-block: 50px;
+.front-container >  .form-group > .datePicker {
+    padding-top: 50px;
     display: flex;
     justify-content: center;
+}
+@media screen and (max-width: 650px) {
+    .front-container >  .form-group > .datePicker {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .datePicker > .from-wrapper {
+        margin-bottom: 10px;
+    }
+}
+
+
+.front-container >  .form-group > .textarea-wrapper {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+
+}
+
+.textarea-wrapper > textarea {
+    width: clamp(250px, 42vw, 400px);
+    height: 100px;
+    overflow-y:scroll;
+    resize:none;
 }
 
 label[for=from], label[for=to], #from {
 
     margin-right: 20px;
 }
+/* Btn form */
 
+.btnHolidayRequest {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    font-size: clamp(15px, 2.5vw, 30px);
+    color: black;
+    background-color: Transparent;
+    text-decoration: none;
+    font-family: Sans-serif;
+    font-weight: bolder;
+    border: 2px solid black;
+    padding: 8px;
+    border-radius: 15px;
+
+}

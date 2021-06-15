@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <script>
@@ -62,11 +65,24 @@
                 <label for="">Field</label>
                 <input type="text" name="" id="" placeholder=""/>
             </div>-->
-            <label for="from">From:</label>
-            <input type="text" id="from" name="from">
-            <label for="to">to:</label>
-            <input type="text" id="to" name="to">
+            <div class="datePicker">
+                <div class="from-wrapper">
+                    <label for="from">From:</label>
+                    <input type="text" id="from" name="from">
+                </div>
+                <div class="to-wrapper">
+                    <label for="to">to:</label>
+                    <input type="text" id="to" name="to">
+                </div>
+            </div>
+
+            <div class="textarea-wrapper">
+                <textarea></textarea>
+                <button class="btnHolidayRequest">Submit <i class="fas fa-arrow-right"></i></button>
+            </div>
+
         </form>
     </div>
+
 </body>
 </html>
