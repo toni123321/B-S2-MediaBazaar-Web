@@ -19,7 +19,7 @@ if(isset($_SESSION['loggedUserId']))
     $dateNow = strtotime($dateNowString);
     $shiftWeek=idate('W', $dateNow); 
 
-    if($selectedWeekNum==null){
+    if($selectedWeekNum==null || $selectedWeekNum<1 || $selectedWeekNum>53){
 
      $selectedWeekNum=$shiftWeek;
 
