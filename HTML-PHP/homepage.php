@@ -51,6 +51,8 @@ if(isset($_SESSION['loggedUserId']))
     <?php include '../HTML-PHP/footer.php'; ?>
     <script src="../JavaScript/autoRefreshHomepage.js"></script>
     <script src="../JavaScript/processProgressBar.js"></script>
+    <script src="../JavaScript/showShiftForSelectedWeek.js"></script>
+
 </body>
 </html>
 <?php
