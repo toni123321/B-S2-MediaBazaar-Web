@@ -22,10 +22,10 @@ body{
     padding: clamp(5px, 2.5vw, 35px);
 }
 
-a:hover i{
+.grid-items > a:hover i{
     display: none;
 }
-a:hover span{
+.grid-items > a:hover span{
     display: unset;
 }
 

@@ -34,3 +34,6 @@ body {
 .welcome-text{
   font-size: clamp(15px, 2.5vw, 35px);
 }
+.weekNumINPUT{
+    display: none;
+}

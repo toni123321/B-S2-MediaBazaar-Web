@@ -7,11 +7,13 @@ if(isset($_SESSION['loggedUserId']))
     $dbHelper = new DbHelper();
 
     $usedHolidayDays = $dbHelper->GetUsedHolidayDays($loggedEmpId);
-    $remainingHolidayDays = $dbHelper->GetReaminingHolidayDays($loggedEmpId);
+    $remainingHolidayDays = $dbHelper->GetRemainingHolidayDays($loggedEmpId);
+    $pendingHolidayDays = $dbHelper->GetPendingHolidayDays($loggedEmpId);
     $totalHolidayDays = $usedHolidayDays + $remainingHolidayDays;
 
     echo $usedHolidayDays;
     echo $remainingHolidayDays;
+    echo $pendingHolidayDays;
     echo $totalHolidayDays;
 
 }
