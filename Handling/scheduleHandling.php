@@ -14,6 +14,17 @@ if(isset($_SESSION['loggedUserId']))
     $selectedWeekNum=(int)$selectedWeekNumSTR;
 
 
+        
+    $dateNowString = date("Y-m-d");
+    $dateNow = strtotime($dateNowString);
+    $shiftWeek=idate('W', $dateNow); 
+
+    if($selectedWeekNum==null){
+
+     $selectedWeekNum=$shiftWeek;
+
+    }
+
     $shiftManager = new ShiftManager();
     $currEmpShifts=$shiftManager->GetAllShiftsEmp($loggedUserId);
     
