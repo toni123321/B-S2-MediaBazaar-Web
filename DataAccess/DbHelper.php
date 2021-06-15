@@ -270,7 +270,7 @@ class DbHelper {
         return $shifts;
     }
 
-    public function GetReaminingHolidayDays($id){
+    public function GetRemainingHolidayDays($id){
         try {
 
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
@@ -299,6 +299,28 @@ class DbHelper {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sql = "SELECT TotalDays FROM holiday_leave_request WHERE EmployeeID = ? AND Status = 'Accepted'";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$id]);
+            $result = $stmt->fetchColumn();
+
+
+            // Close DB connection
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+        return $result;
+    }
+
+    public function GetPendingHolidayDays($id){
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT TotalDays FROM holiday_leave_request WHERE EmployeeID = ? AND Status = 'InProgress'";
 
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([$id]);

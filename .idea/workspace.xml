@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="added files for working on the HLR">
-      <change afterPath="$PROJECT_DIR$/Handling/HLR-info-handling.php" afterDir="false" />
+    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="added handling for HLR status and form submission">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/schedule.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/schedule.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/DbHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DbHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handling/HLR-handling.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/HLR-form-handling.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handling/accountHandling.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/accountHandling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handling/HLR-info-handling.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/HLR-info-handling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/weekUpDownSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/weekUpDownSelector.js" afterDir="false" />
     </list>
     <list id="38f24340-5179-4fdd-8f41-7ca64150a0df" name="Changes by tonit" comment="Changes by Antonio Takev" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +72,8 @@
       <workItem from="1622731104570" duration="17000" />
       <workItem from="1623147838754" duration="13394000" />
       <workItem from="1623161404337" duration="1314000" />
-      <workItem from="1623676149471" duration="8130000" />
+      <workItem from="1623676149471" duration="9939000" />
+      <workItem from="1623745640529" duration="3377000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -164,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623679436753</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added handling for HLR status and form submission">
+      <created>1623685241892</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1623685241892</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +201,7 @@
     <MESSAGE value="- made the front-end view of the schedule (it is not responsive yet)*&#10;- added JS script getting the selected by the user week without refreshing the page&#10;- changed the auto refresh for the homepage from 5s to 60s&#10;&#10;*the displayed shifts in schedule.php do not exist, they have been added to test the design. The real shifts will be displayed once the handling is ready." />
     <MESSAGE value="selecting weeks in schedule with arrows" />
     <MESSAGE value="added files for working on the HLR" />
-    <option name="LAST_COMMIT_MESSAGE" value="added files for working on the HLR" />
+    <MESSAGE value="added handling for HLR status and form submission" />
+    <option name="LAST_COMMIT_MESSAGE" value="added handling for HLR status and form submission" />
   </component>
 </project>
