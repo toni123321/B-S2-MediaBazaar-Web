@@ -22,12 +22,14 @@ if(isset($_SESSION['loggedUserId']))
     </head>
     <body>
     <?php include 'main.php';?>
+
+    <button class="test">TEST</button>
     <div class="weekSelector">
-        <a href="#" class="pointer arrow down"><i class="fas fa-arrow-left"></i></a>
+        <a  class="pointer arrow down"><i class="fas fa-arrow-left"></i></a>
         <select name="weeks" id="weeks">
             <?php include '../Handling/addWeeks.php';?>
         </select>
-        <a href="#" class="pointer arrow up"><i class="fas fa-arrow-right"></i></a>
+        <a  class="pointer arrow up"><i class="fas fa-arrow-right"></i></a>
     </div>
     <div class="flex-container">
         <div class="weekDayTile">

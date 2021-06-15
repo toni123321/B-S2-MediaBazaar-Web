@@ -346,7 +346,7 @@ class DbHelper {
                     VALUES(?, ?, ?, ?, ?, ?)";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$id, $startDate, $endDate, $totalDays, $comment, 3, $comment]);
+            $stmt->execute([$id, $startDate, $endDate, $totalDays, 3, $comment]);
             // Close DB connection
             $this->conn = null;
 

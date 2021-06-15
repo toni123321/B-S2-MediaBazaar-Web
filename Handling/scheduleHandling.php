@@ -10,9 +10,10 @@ if(isset($_SESSION['loggedUserId']))
     $employeeManager = new EmployeeManager();
     $loggedUserId = (int) $_SESSION['loggedUserId'];
     $currEmp = $employeeManager->GetEmployee($loggedUserId);
-    $selectedWeekNumSTR=(string)$_POST['weekNum'];
+    $selectedWeekNumSTR = (string) $_GET['selectedWeek'];
     $selectedWeekNum=(int)$selectedWeekNumSTR;
 
+    echo $selectedWeekNumSTR;
 
         
     $dateNowString = date("Y-m-d");
@@ -44,7 +45,7 @@ if(isset($_SESSION['loggedUserId']))
        }
     }
 
-    header("Location: ../HTML-PHP/schedule.php");
+    //header("Location: ../HTML-PHP/schedule.php");
 
 
 }
