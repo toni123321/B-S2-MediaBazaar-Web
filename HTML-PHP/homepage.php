@@ -11,6 +11,11 @@ if(isset($_SESSION['loggedUserId']))
     $employeeManager = new EmployeeManager();
     $loggedUserId = (int) $_SESSION['loggedUserId'];
     $currEmp = $employeeManager->GetEmployee($loggedUserId);
+
+    
+    $dateNowString = date("Y-m-d");
+    $dateNow = strtotime($dateNowString);
+    $shiftWeek=idate('W', $dateNow); 
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -39,7 +44,10 @@ if(isset($_SESSION['loggedUserId']))
         </div>
         <div class="btnview">
 <!--            <a href="#">View full schedule ></a>-->
-            <button>View full schedule ></button>
+<form id="viewSchedule" class="viewSchedule" action="../Handling/scheduleHandling.php" method="post">
+<input type="text" class="weekNumINPUT" name="weekNum" id="weekNum" value="<?php echo $shiftWeek?>"/>
+            <button type="submit">View full schedule ></button>
+</form>
             <h2>
 
             </h2>
