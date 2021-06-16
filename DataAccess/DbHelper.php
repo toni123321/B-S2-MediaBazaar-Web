@@ -316,16 +316,34 @@ class DbHelper {
 
     public function GetPendingHolidayDays($id){
         try {
-
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "SELECT TotalDays FROM holiday_leave_request WHERE EmployeeID = ? AND Status = 'InProgress'";
+                $sql = "SELECT SUM(TotalDays) FROM holiday_leave_request WHERE EmployeeID = ? AND Status = 'InProgress'";
 
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([$id]);
             $result = $stmt->fetchColumn();
 
+            // Close DB connection
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+        return $result;
+    }
+
+    public function GetNumberHLRsPerEmp($id){
+        try {
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT COUNT(*) FROM holiday_leave_request WHERE EmployeeID = ? AND Status = 'InProgress'";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$id]);
+            $result = $stmt->fetchColumn();
 
             // Close DB connection
             $this->conn = null;
@@ -354,8 +372,6 @@ class DbHelper {
             echo $e->getMessage();
         }
     }
-
-
 
 }
 ?>

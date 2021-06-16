@@ -44,6 +44,7 @@ textarea {
     text-align: center;
 }
 
+
 @media screen and (max-width: 600px) {
     .front-container {
         margin-top: 20%;
@@ -124,6 +125,14 @@ label[for=from], label[for=to], #from {
     border: 2px solid black;
     padding: 8px;
     border-radius: 15px;
+}
 
+
+.enabledHLRbtn{
+    background-color: #42ff96;
+}
+
+.disabledHLRbtn{
+    background-color: #f35151;
 }
 

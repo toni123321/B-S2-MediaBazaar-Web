@@ -10,6 +10,7 @@ if(isset($_SESSION['loggedUserId'])) {
     $dbHelper = new DbHelper();
 
 
+    $HLR_requests = $dbHelper->GetNumberHLRsPerEmp($loggedEmpId);
 
     $startDateString = strtotime((string)$_POST['startDate']);
     //$startDate = getDate($startDateString);
@@ -30,8 +31,10 @@ if(isset($_SESSION['loggedUserId'])) {
     $comment = (string)$_POST['comment'];
     $totalDays = $later->diff($earlier)->format("%a");
 
-
-
+    if($totalDays == 0){
+        $totalDays = 1;
+    }
+    
     echo "End date: {$endDate} <br> Start date: {$startDate} <br>" . date("Y-m-d") . '<br>';
 
 
@@ -39,7 +42,7 @@ if(isset($_SESSION['loggedUserId'])) {
         echo "Smaller start date";
     }
 
-    if($endDate >= $startDate && $startDate > date("Y-m-d")) {
+    if($endDate >= $startDate && $startDate > date("Y-m-d") && $HLR_requests < 3) {
         $dbHelper->InsertHLR($loggedEmpId, $startDate, $endDate, $totalDays, $comment, $dateNowString);
 
         session_start();

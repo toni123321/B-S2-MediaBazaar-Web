@@ -1,4 +1,3 @@
-<?php?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -19,7 +18,7 @@
 <body>
 <script src="../JavaScript/dateTimePicker.js"></script>
 <?php include 'main.php';?>
-
+<?php include_once '../DataAccess/DbHelper.php'; ?>
 
 <?php
 session_start();
@@ -37,7 +36,31 @@ if(isset($_SESSION['holidayRequestSent-msg'])) {
             <label for="">Field</label>
             <input type="text" name="" id="" placeholder=""/>
         </div>-->
-        <div class="datePicker">
+
+
+        <?php
+        $loggedEmpId = (int)$_SESSION['loggedUserId'];
+        $dbHelper = new DbHelper();
+        $HLR_requests = $dbHelper->GetNumberHLRsPerEmp($loggedEmpId);
+        if($HLR_requests >= 3){
+           echo '<div class="datePicker">
+            <div class="from-wrapper">
+                <label for="from">From:</label>
+                <input type="text" id="from" name="startDate" disabled>
+            </div>
+            <div class="to-wrapper">
+                <label for="to">to:</label>
+                <input type="text" id="to" name="endDate" disabled>
+            </div>
+        </div>
+        <div class="textarea-wrapper">
+            <label for="reasonHLR">Reason:</label>
+            <textarea name="comment" disabled></textarea>
+            <button class="btnHolidayRequest disabledHLRbtn" disabled>Submit <i class="fas fa-arrow-right"></i></button>
+        </div>';
+        }
+        else{
+            echo '<div class="datePicker">
             <div class="from-wrapper">
                 <label for="from">From:</label>
                 <input type="text" id="from" name="startDate" required>
@@ -47,12 +70,14 @@ if(isset($_SESSION['holidayRequestSent-msg'])) {
                 <input type="text" id="to" name="endDate" required>
             </div>
         </div>
-
         <div class="textarea-wrapper">
             <label for="reasonHLR">Reason:</label>
             <textarea name="comment" required></textarea>
-            <button class="btnHolidayRequest">Submit <i class="fas fa-arrow-right"></i></button>
-        </div>
+            <button class="btnHolidayRequest enabledHLRbtn">Submit <i class="fas fa-arrow-right"></i></button>
+        </div>';
+        }
+        ?>
+
 
     </form>
 </div>
