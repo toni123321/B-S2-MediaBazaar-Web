@@ -1,18 +1,14 @@
 <?php
-
 include_once '../Logic/EmployeeManager.class.php';
 include_once '../DataAccess/DbHelper.php';
 include_once '../Logic/ShiftManager.class.php';
 
+session_start();
 if(isset($_SESSION['loggedUserId'])) {
     $employeeManager = new EmployeeManager();
     $loggedUserId = (int)$_SESSION['loggedUserId'];
     $currEmp = $employeeManager->GetEmployee($loggedUserId);
-
     $selectedWeekNum = (int)$_GET['selectedWeek'];
-
-
-
     $dateNowString = date("Y-m-d");
     $dateNow = strtotime($dateNowString);
     $shiftWeek = idate('W', $dateNow);
@@ -21,6 +17,12 @@ if(isset($_SESSION['loggedUserId'])) {
 
         $selectedWeekNum = $shiftWeek;
 
+    }
+
+    $selection = (bool)$_GET['selectedWeek'];
+
+    if((bool)$_GET['selectedWeek'] == false){
+        $selectedWeekNum = $shiftWeek;
     }
 
     $shiftManager = new ShiftManager();
@@ -66,51 +68,47 @@ if(isset($_SESSION['loggedUserId'])) {
                 $monShift = $shift;
             }
 
-             if($shift->GetDate()->format('w') == 2 && $tueShift == null){
-                 $tueShift = $shift;
-             }
-             else if($shift->GetDate()->format('w') == 2 && $tueShift != null){
-                 $tueShift2 = $shift;
-             }
+            if ($shift->GetDate()->format('w') == 2 && $tueShift == null) {
+                $tueShift = $shift;
+            } else if ($shift->GetDate()->format('w') == 2 && $tueShift != null) {
+                $tueShift2 = $shift;
+            }
 
-             if($shift->GetDate()->format('w') == 3 && $wedShift == null){
-                 $wedShift = $shift;
-             }
-             else if($shift->GetDate()->format('w') == 3 && $wedShift != null){
-                 $wedShift2 = $shift;
-             }
+            if ($shift->GetDate()->format('w') == 3 && $wedShift == null) {
+                $wedShift = $shift;
+            } else if ($shift->GetDate()->format('w') == 3 && $wedShift != null) {
+                $wedShift2 = $shift;
+            }
 
-             if($shift->GetDate()->format('w') == 4 && $thuShift == null){
-                 $thuShift = $shift;
-             }
-             else if($shift->GetDate()->format('w') == 4 && $thuShift != null){
-                 $thuShift2 = $shift;
-             }
+            if ($shift->GetDate()->format('w') == 4 && $thuShift == null) {
+                $thuShift = $shift;
+            } else if ($shift->GetDate()->format('w') == 4 && $thuShift != null) {
+                $thuShift2 = $shift;
+            }
 
-             if($shift->GetDate()->format('w') == 5 && $friShift == null){
-                 $friShift = $shift;
-             }
-             else if($shift->GetDate()->format('w') == 5 && $friShift != null){
-                 $friShift2 = $shift;
-             }
+            if ($shift->GetDate()->format('w') == 5 && $friShift == null) {
+                $friShift = $shift;
+            } else if ($shift->GetDate()->format('w') == 5 && $friShift != null) {
+                $friShift2 = $shift;
+            }
 
-             if($shift->GetDate()->format('w') == 6 && $satShift == null){
-                 $satShift = $shift;
-             }
-             else if($shift->GetDate()->format('w') == 6 && $satShift != null){
-                 $satShift2 = $shift;
-             }
+            if ($shift->GetDate()->format('w') == 6 && $satShift == null) {
+                $satShift = $shift;
+            } else if ($shift->GetDate()->format('w') == 6 && $satShift != null) {
+                $satShift2 = $shift;
+            }
 
-             if($shift->GetDate()->format('w') == 0 && $sunShift == null){
-                 $sunShift = $shift;
-             }
-             else if($shift->GetDate()->format('w') == 0 && $sunShift != null){
-                 $sunShift2 = $shift;
-             }
+            if ($shift->GetDate()->format('w') == 0 && $sunShift == null) {
+                $sunShift = $shift;
+            } else if ($shift->GetDate()->format('w') == 0 && $sunShift != null) {
+                $sunShift2 = $shift;
+            }
         }
+    }
 
         function AddWeekDayTile($shift1, $shift2, $wd){
             $dateNowString = date("Y-m-d");
+
 
             echo '<div class="weekDayTile">';
             if ($shift1 == null) {
@@ -170,51 +168,7 @@ if(isset($_SESSION['loggedUserId'])) {
         AddWeekDayTile($satShift, $satShift2, "Saturday");
         AddWeekDayTile($sunShift, $sunShift2, "Sunday");
 
-        /*echo '<div class="weekDayTile">';
-        if ($monShift == null) {
-            echo '<div class="dayOffAttended">Day off</div>';
-        } else if ($monShift->GetDate()->format('Y-m-d')> $dateNowString) {
-            echo '<div class="upcoming">Upcoming shift</div>';
-        } else if ($monShift->GetHasAttended() == true)     {
-            echo '<div class="hasAttended">Attended</div>';
-        } else if ($monShift->GetHasAttended() == false) {
-            echo '<div class="hasNotAttended">Absent</div>';
-        }
-        echo '<div class="weekday">'. $monShift->GetDate()->format('D') .'</div>';
-        echo '<hr class="hr">';
-        if ($monShift == null) {
-            echo '<div>No shift(s)</div>';
-        } else if ($monShift2 == null) {
-            echo '<div class="date">' . $monShift->GetDate()->format('j M Y') . '</div>';
-            if ($monShift->GetType() == "Morning") {
-                echo '<div class="time">08:00-12:00</div>';
-            } else if ($monShift->GetType() == "Afternoon") {
-                echo '<div class="time">12:00-16:00</div>';
-            } else if ($monShift->GetType() == "Evening") {
-                echo '<div class="time">16:00-20:00</div>';
-            };
-        } else {
-            echo '<div class="date">' . $monShift->GetDate()->format('j M Y') . '</div>';
-            if ($monShift->GetType() == "Morning") {
-                echo '<div class="time">08:00-12:00</div>';
-            } else if ($monShift->GetType() == "Afternoon") {
-                echo '<div class="time">12:00-16:00</div>';
-            } else if ($monShift->GetType() == "Evening") {
-                echo '<div class="time">16:00-20:00</div>';
-            }
-            echo '<hr class="hr-2ndShift">';
-            echo '<div class="date">' . $monShift2->GetDate()->format('j M Y') . '</div>';
-            if ($monShift2->GetType() == "Morning") {
-                echo '<div class="time">08:00-12:00</div>';
-            } else if ($monShift2->GetType() == "Noon") {
-                echo '<div class="time">12:00-16:00</div>';
-            } else if ($monShift2->GetType() == "Evening") {
-                echo '<div class="time">16:00-20:00</div>';
-            }
-        }
-        echo '</div>';*/
 
 
-
-    }
 }
+
