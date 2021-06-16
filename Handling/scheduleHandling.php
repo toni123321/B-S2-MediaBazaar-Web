@@ -8,12 +8,9 @@ if(isset($_SESSION['loggedUserId'])) {
     $employeeManager = new EmployeeManager();
     $loggedUserId = (int)$_SESSION['loggedUserId'];
     $currEmp = $employeeManager->GetEmployee($loggedUserId);
-    if(isset($_GET['selectedWeek'])){
-        echo 123;
-    }
+
     $selectedWeekNum = (int)$_GET['selectedWeek'];
-    $test = (int)$_GET['test'];
-    echo $test;
+
 
 
     $dateNowString = date("Y-m-d");

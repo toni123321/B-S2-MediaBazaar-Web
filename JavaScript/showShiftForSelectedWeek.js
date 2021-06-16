@@ -22,6 +22,7 @@ $('.test').click(function (){
 $("#weeks").on('change', function (){
     var xhttp = new XMLHttpRequest();
     var selectedWeek = $(this).val();
+    console.log(selectedWeek);
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.responseText);

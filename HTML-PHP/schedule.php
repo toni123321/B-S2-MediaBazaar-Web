@@ -30,7 +30,8 @@ if(isset($_SESSION['loggedUserId']))
         <a class="pointer arrow up"><i class="fas fa-arrow-right"></i></a>
     </div>
     <div class="flex-container">
-        <?php include '../Handling/scheduleHandling.php';?>
+        <!-- Problem goes here -->
+        <?php /*include '../Handling/scheduleHandling.php';*/?>
     </div>
     <script src="../JavaScript/showShiftForSelectedWeek.js"></script>
     <script src="../JavaScript/weekUpDownSelector.js"></script>
