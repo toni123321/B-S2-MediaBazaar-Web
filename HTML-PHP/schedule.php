@@ -23,7 +23,6 @@ if(isset($_SESSION['loggedUserId']))
     <?php include 'main.php';?>
     <div class="weekSelector">
         <a class="pointer arrow down"><i class="fas fa-arrow-left"></i></a>
-
         <select name="weeks" id="weeks">
             <?php include '../Handling/addWeeks.php';?>
         </select>
