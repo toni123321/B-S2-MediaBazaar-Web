@@ -35,10 +35,13 @@ textarea {
     width: clamp(300px, 80vw, 600px);
     position: relative;
 }
+
+
 .msg {
     margin-top: 10%;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -111,7 +114,7 @@ label[for=from], label[for=to], #from {
     margin-left:auto;
     margin-right:auto;
     margin-top:20px;
-    font-size: clamp(15px, 2.5vw, 30px);
+    font-size: clamp(15px, 2vw, 30px);
     color: black;
     background-color: Transparent;
     text-decoration: none;

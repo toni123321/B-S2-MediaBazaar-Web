@@ -26,6 +26,7 @@ $("#weeks").on('change', function (){
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.responseText);
+
         }
     };
     xhttp.open("GET", "../Handling/scheduleHandling.php?selectedWeek=" + selectedWeek, true);
