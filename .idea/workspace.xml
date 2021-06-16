@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="db helper fix">
-      <change afterPath="$PROJECT_DIR$/Handling/setCurrentWeekScheduleSelector.php" afterDir="false" />
+    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="changed scheduler gap between items">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML-PHP/schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTML-PHP/schedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handling/scheduleHandling.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/scheduleHandling.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/showShiftForSelectedWeek.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/showShiftForSelectedWeek.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/DbHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DbHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handling/HLR-form-handling.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/HLR-form-handling.php" afterDir="false" />
     </list>
     <list id="38f24340-5179-4fdd-8f41-7ca64150a0df" name="Changes by tonit" comment="Changes by Antonio Takev" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +71,8 @@
       <workItem from="1623161404337" duration="1314000" />
       <workItem from="1623676149471" duration="9939000" />
       <workItem from="1623745640529" duration="22962000" />
-      <workItem from="1623834411607" duration="6698000" />
+      <workItem from="1623834411607" duration="7043000" />
+      <workItem from="1623854642707" duration="324000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -194,7 +193,21 @@
       <option name="project" value="LOCAL" />
       <updated>1623783607464</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fixed schedule viewer">
+      <created>1623850769775</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1623850769775</updated>
+    </task>
+    <task id="LOCAL-00019" summary="changed scheduler gap between items">
+      <created>1623851038439</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1623851038439</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +239,8 @@
     <MESSAGE value="fixed arrow selector on the schedule page" />
     <MESSAGE value="db helper fix, schedule now works" />
     <MESSAGE value="db helper fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="db helper fix" />
+    <MESSAGE value="fixed schedule viewer" />
+    <MESSAGE value="changed scheduler gap between items" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed scheduler gap between items" />
   </component>
 </project>

@@ -336,17 +336,17 @@ class DbHelper {
         return $result;
     }
 
-    public function InsertHLR($id, $startDate, $endDate, $totalDays, $comment){
+    public function InsertHLR($id, $startDate, $endDate, $totalDays, $comment, $requestDT){
         try {
 
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "INSERT INTO holiday_leave_request(EmployeeID, StartDay, EndDay, TotalDays, Status, Comments) 
-                    VALUES(?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO holiday_leave_request(EmployeeID, StartDay, EndDay, TotalDays, Status, Comments, RequestDate) 
+                    VALUES(?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$id, $startDate, $endDate, $totalDays, 3, $comment]);
+            $stmt->execute([$id, $startDate, $endDate, $totalDays, 3, $comment, $requestDT]);
             // Close DB connection
             $this->conn = null;
 

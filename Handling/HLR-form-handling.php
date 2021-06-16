@@ -4,7 +4,7 @@ include_once '../Logic/EmployeeManager.class.php';
 
 if(isset($_SESSION['loggedUserId'])) {
 
-
+    $dateNowString = date("Y-m-d H:i:s");
 
     $loggedEmpId = (int)$_SESSION['loggedUserId'];
     $dbHelper = new DbHelper();
@@ -40,7 +40,7 @@ if(isset($_SESSION['loggedUserId'])) {
     }
 
     if($endDate >= $startDate && $startDate > date("Y-m-d")) {
-        $dbHelper->InsertHLR($loggedEmpId, $startDate, $endDate, $totalDays, $comment);
+        $dbHelper->InsertHLR($loggedEmpId, $startDate, $endDate, $totalDays, $comment, $dateNowString);
 
         session_start();
         $_SESSION['holidayRequestSent-msg'] = "You have successfully sent a holiday leave request!";
