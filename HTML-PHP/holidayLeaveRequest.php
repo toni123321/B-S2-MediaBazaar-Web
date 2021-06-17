@@ -110,6 +110,8 @@ echo '
         <li>PENDING: '. $pendingHolidayDays .'</li>
     </ul>
 </div>
+';
+?>
 <div class="hlr-request-history">
     <h3>Recent holiday requests</h3>
     <table class="requests-table">
@@ -119,18 +121,24 @@ echo '
             <th>SubmittedOn</th>
             <th>Status</th>
         </tr>
+        <?php
+        for ($x = 0; $x < 5; $x++) {
+          
+        ?>
         <tr>
             <td>20-02-2020</td>
             <td>25-02-2020</td>
             <td>12-01-2020</td>
             <td>Accepted</td>
         </tr>
-
+        <?php
+        }
+        ?>
     </table>
+    <button class="loadNewDataOnClick">Load more</button>
 
 </div>
-';
-?>
+<script src="../JavaScript/loadMoreRequestOnClick.js"></script>
 </body>
 </html>
 <?php

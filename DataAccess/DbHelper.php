@@ -242,7 +242,6 @@ class DbHelper {
             $sql = "SELECT ID, EmployeeID, Date, HasAttended, NoShowReason, Type, wfh
                     from shift";
 
-
             $result = $this->conn->query($sql);
 
 
@@ -268,6 +267,46 @@ class DbHelper {
             echo $e->getMessage();
         }
         return $shifts;
+    }
+
+    public function GetAllHolidayRequestsForEmployee($employeeId, $startingIndex){
+        $hlrs = array();
+
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT * FROM holiday_leave_request Where EmployeeID = ? LIMIT ?,5";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$employeeId, $startingIndex]);
+
+            $result = $stmt->fetchAll();
+
+            foreach ($result as $row)
+            {
+
+                $id = $row['ID'];
+                $empId = $row['EmployeeID'];
+                $startDay = $row['StartDay'];
+                $endDay = $row['EndDay'];
+                $totalDays = $row['TotalDays'];
+                $status = $row['Status'];
+                $reason = $row['Comments'];
+                $requestDate = $row['RequestDate'];
+
+                $hlr = new HolidayLeaveRequest($id, $employeeId, $startDay, $endDay, $totalDays, $status, $reason, $requestDate);
+                $hlrs[] = $hlr;
+            }
+
+            // Close DB connection
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+        return $hlrs;
     }
 
     public function GetRemainingHolidayDays($id){
