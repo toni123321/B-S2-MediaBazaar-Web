@@ -1,3 +1,14 @@
+<?php
+
+include_once '../Logic/EmployeeManager.class.php';
+include_once '../Handling/timeUntilNextShift.php';
+?>
+<?php
+
+if(isset($_SESSION['loggedUserId']))
+{
+?>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -21,7 +32,7 @@
 <?php include_once '../DataAccess/DbHelper.php'; ?>
 
 <?php
-session_start();
+
 if(isset($_SESSION['holidayRequestSent-msg'])) {
     $msg = (string)$_SESSION['holidayRequestSent-msg'];
     echo "<h3 class='msg'>{$msg}</h3>";
@@ -29,15 +40,9 @@ if(isset($_SESSION['holidayRequestSent-msg'])) {
 }
 ?>
 
-<div class="front-container">
+<div class="hlr-send-request">
     <img src="../Images/holidayAvatar.png" alt="avatar" />
-    <form id="accountForm" class="form-group" action="../Handling/HLR-form-handling.php" method="post">
-        <!--<div class="email">
-            <label for="">Field</label>
-            <input type="text" name="" id="" placeholder=""/>
-        </div>-->
-
-
+    <form  class="form-hlr-send-request" action="../Handling/HLR-form-handling.php" method="post">
         <?php
         $loggedEmpId = (int)$_SESSION['loggedUserId'];
         $dbHelper = new DbHelper();
@@ -77,10 +82,60 @@ if(isset($_SESSION['holidayRequestSent-msg'])) {
         </div>';
         }
         ?>
-
-
     </form>
 </div>
+<?php
 
+include_once '../Logic/EmployeeManager.class.php';
+
+if (isset($_SESSION['loggedUserId'])) {
+    $loggedEmpId = (int)$_SESSION['loggedUserId'];
+    $dbHelper = new DbHelper();
+
+    $usedHolidayDays = $dbHelper->GetUsedHolidayDays($loggedEmpId);
+
+    $remainingHolidayDays = $dbHelper->GetRemainingHolidayDays($loggedEmpId);
+
+    $pendingHolidayDays = $dbHelper->GetPendingHolidayDays($loggedEmpId);
+    $totalHolidayDays = $usedHolidayDays + $remainingHolidayDays;
+}
+
+echo '
+<div class="hlr-statistics">
+    <h3>Holiday days</h3>
+    <ul class="hlr-statistics-list">
+        <li>TOTAL: ' . $totalHolidayDays . '</li>
+        <li>REMAINING: '. $remainingHolidayDays .'</li>
+        <li>USED: '. $usedHolidayDays .'</li>
+        <li>PENDING: '. $pendingHolidayDays .'</li>
+    </ul>
+</div>
+<div class="hlr-request-history">
+    <h3>Recent holiday requests</h3>
+    <table class="requests-table">
+        <tr>
+            <th>StartDay</th>
+            <th>EndDay</th>
+            <th>SubmittedOn</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>20-02-2020</td>
+            <td>25-02-2020</td>
+            <td>12-01-2020</td>
+            <td>Accepted</td>
+        </tr>
+
+    </table>
+
+</div>
+';
+?>
 </body>
 </html>
+<?php
+}
+else{
+    header("Location: ../HTML-PHP/landing-login.php");
+}
+?>

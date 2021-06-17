@@ -3,39 +3,23 @@ body {
     margin: 0;
 }
 
-
-
 .fa-times {
     font-size: 25px;
 }
 
-/*
-
-
-input,
-textarea {
-    outline: none;
-    border-style: none;
-    border-bottom: 1px groove var(--light-gray);
-    width: 100%;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    resize: vertical;
-}
-*/
-
-
-.front-container {
-    margin-top: 10%;
+.hlr-send-request, .hlr-statistics, .hlr-request-history {
     margin-left:auto;
     margin-right:auto;
     background: white;
     box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.3);
 
-    width: clamp(300px, 80vw, 600px);
+    width: clamp(250px, 90vw, 600px);;
     position: relative;
 }
 
+.hlr-send-request {
+    margin-top: 10%;
+}
 
 .msg {
     margin-top: 10%;
@@ -44,9 +28,8 @@ textarea {
     text-align: center;
 }
 
-
 @media screen and (max-width: 600px) {
-    .front-container {
+    .hlr-send-request {
         margin-top: 20%;
     }
     .msg {
@@ -57,7 +40,7 @@ textarea {
     }
 }
 
-.front-container img {
+.hlr-send-request img {
     border: 1px solid black;
     border-radius: 50%;
     width: clamp(58px, 8vw, 70px);
@@ -66,13 +49,14 @@ textarea {
     left: 40px;
 }
 
-.front-container >  .form-group > .datePicker {
+.form-hlr-send-request > .datePicker {
     padding-top: 50px;
     display: flex;
     justify-content: center;
 }
+
 @media screen and (max-width: 650px) {
-    .front-container >  .form-group > .datePicker {
+    .form-hlr-send-request > .datePicker {
         padding-top: 50px;
         display: flex;
         flex-direction: column;
@@ -84,14 +68,14 @@ textarea {
 }
 
 
-.front-container >  .form-group > .textarea-wrapper {
+
+.form-hlr-send-request > .textarea-wrapper {
     padding-top: 30px;
     padding-bottom: 20px;
     text-align: center;
     display: flex;
     flex-direction:column;
     align-items: center;
-
 }
 
 .textarea-wrapper > label[for=reasonHLR] {
@@ -106,11 +90,11 @@ textarea {
 }
 
 label[for=from], label[for=to], #from {
-
     margin-right: 20px;
 }
-/* Btn form */
 
+
+/* Btn form */
 .btnHolidayRequest {
     display: block;
     margin-left:auto;
@@ -127,12 +111,73 @@ label[for=from], label[for=to], #from {
     border-radius: 15px;
 }
 
-
 .enabledHLRbtn{
     background-color: #42ff96;
 }
 
 .disabledHLRbtn{
     background-color: #f35151;
+}
+
+.hlr-statistics > h3, .hlr-request-history > h3 {
+    padding-top:10px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.hlr-statistics-list {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-inline-start: 0px !important;
+}
+
+
+.hlr-statistics-list > li {
+    list-style-type: none;
+}
+
+.hlr-statistics-list > li:not(:last-child) {
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 650px) {
+    .hlr-statistics-list {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hlr-statistics-list > li:not(:last-child) {
+        margin-right: unset;
+    }
+
+}
+
+.hlr-request-history {
+    margin-bottom: 100px;
+    padding-bottom: 20px;
+}
+.requests-table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    font-size: clamp(12px, 2.5vw, 18px);
+}
+
+.requests-table, th, td {
+    border: 1px solid black;
+}
+
+.requests-table th, td {
+    padding: clamp(5px, 1vw, 10px);
+    text-align: center;
+}
+
+.requests-table th {
+    background-color: whitesmoke;
 }
 

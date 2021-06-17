@@ -276,12 +276,16 @@ class DbHelper {
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "SELECT RemainingHolidayDays FROM remaining_holiday_days WHERE EmployeeID = ?";
+            $sql = "SELECT SUM(RemainingHolidayDays) FROM remaining_holiday_days WHERE EmployeeID = ?";
 
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([$id]);
             $result = $stmt->fetchColumn();
 
+            if($result == null)
+            {
+                $result = 0;
+            }
 
             // Close DB connection
             $this->conn = null;
@@ -298,12 +302,15 @@ class DbHelper {
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "SELECT TotalDays FROM holiday_leave_request WHERE EmployeeID = ? AND Status = 'Accepted'";
+            $sql = "SELECT SUM(TotalDays) FROM holiday_leave_request WHERE EmployeeID = ? AND Status = 'Accepted'";
 
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([$id]);
             $result = $stmt->fetchColumn();
-
+            if($result == null)
+            {
+                $result = 0;
+            }
 
             // Close DB connection
             $this->conn = null;
@@ -324,6 +331,11 @@ class DbHelper {
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([$id]);
             $result = $stmt->fetchColumn();
+
+            if($result == null)
+            {
+                $result = 0;
+            }
 
             // Close DB connection
             $this->conn = null;
