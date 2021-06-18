@@ -84,8 +84,8 @@ class HolidayLeaveRequest{
         $this->requestDate = $requestDate;
     }
 
-    public function GetRequestDate(){
-        return $this->requestDate;
+    public function GetRequestDate(): DateTime {
+        return new DateTime($this->requestDate);
     }
 
 }

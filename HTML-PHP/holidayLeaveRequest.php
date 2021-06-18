@@ -12,8 +12,7 @@ if(isset($_SESSION['loggedUserId']))
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HolidayLeaveRequests</title>
 
@@ -121,24 +120,15 @@ echo '
             <th>SubmittedOn</th>
             <th>Status</th>
         </tr>
-        <?php
-        for ($x = 0; $x < 5; $x++) {
-          
-        ?>
-        <tr>
-            <td>20-02-2020</td>
-            <td>25-02-2020</td>
-            <td>12-01-2020</td>
-            <td>Accepted</td>
-        </tr>
-        <?php
-        }
-        ?>
     </table>
     <button class="loadNewDataOnClick">Load more</button>
 
 </div>
-<script src="../JavaScript/loadMoreRequestOnClick.js"></script>
+<script>
+    var empId = <?php echo json_encode($loggedEmpId); ?>;
+</script>
+<script src="../JavaScript/loadMostRecentHLR.js"></script>
+<script src="../JavaScript/loadMoreHLR-OnClick.js"></script>
 </body>
 </html>
 <?php

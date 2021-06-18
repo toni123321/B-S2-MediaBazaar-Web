@@ -1,7 +1,7 @@
 
 <?php include_once '../Models/Department.class.php'; ?>
 <?php include_once '../Models/Shift.class.php'; ?>
-
+<?php include_once '../Models/HolidayLeaveRequest.class.php';?>
 <?php
 
 class DbHelper {
@@ -277,10 +277,13 @@ class DbHelper {
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "SELECT * FROM holiday_leave_request Where EmployeeID = ? LIMIT ?,5";
+            $sql = "SELECT * FROM holiday_leave_request Where EmployeeID = :employeeId LIMIT :startIndex,5";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$employeeId, $startingIndex]);
+
+            $stmt->bindValue(':employeeId', (int) $employeeId, PDO::PARAM_INT);
+            $stmt->bindValue(':startIndex', (int) $startingIndex, PDO::PARAM_INT);
+            $stmt->execute();
 
             $result = $stmt->fetchAll();
 
@@ -296,7 +299,7 @@ class DbHelper {
                 $reason = $row['Comments'];
                 $requestDate = $row['RequestDate'];
 
-                $hlr = new HolidayLeaveRequest($id, $employeeId, $startDay, $endDay, $totalDays, $status, $reason, $requestDate);
+                $hlr = new HolidayLeaveRequest($id, $empId, $startDay, $endDay, $totalDays, $status, $reason, $requestDate);
                 $hlrs[] = $hlr;
             }
 
