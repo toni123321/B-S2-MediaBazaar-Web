@@ -1,14 +1,24 @@
+<?php
+
+include_once '../Logic/EmployeeManager.class.php';
+include_once '../Handling/timeUntilNextShift.php';
+?>
+<?php
+
+if(isset($_SESSION['loggedUserId']))
+{
+?>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HolidayLeaveRequests</title>
 
     <link rel="stylesheet" href="../CSS/holidayLeaveRequest.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <!--<link rel="stylesheet" href="/resources/demos/style.css">-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -21,7 +31,7 @@
 <?php include_once '../DataAccess/DbHelper.php'; ?>
 
 <?php
-session_start();
+
 if(isset($_SESSION['holidayRequestSent-msg'])) {
     $msg = (string)$_SESSION['holidayRequestSent-msg'];
     echo "<h3 class='msg'>{$msg}</h3>";
@@ -29,15 +39,9 @@ if(isset($_SESSION['holidayRequestSent-msg'])) {
 }
 ?>
 
-<div class="front-container">
+<div class="hlr-send-request">
     <img src="../Images/holidayAvatar.png" alt="avatar" />
-    <form id="accountForm" class="form-group" action="../Handling/HLR-form-handling.php" method="post">
-        <!--<div class="email">
-            <label for="">Field</label>
-            <input type="text" name="" id="" placeholder=""/>
-        </div>-->
-
-
+    <form  class="form-hlr-send-request" action="../Handling/HLR-form-handling.php" method="post">
         <?php
         $loggedEmpId = (int)$_SESSION['loggedUserId'];
         $dbHelper = new DbHelper();
@@ -77,10 +81,59 @@ if(isset($_SESSION['holidayRequestSent-msg'])) {
         </div>';
         }
         ?>
-
-
     </form>
 </div>
+<?php
 
+include_once '../Logic/EmployeeManager.class.php';
+
+if (isset($_SESSION['loggedUserId'])) {
+    $loggedEmpId = (int)$_SESSION['loggedUserId'];
+    $dbHelper = new DbHelper();
+
+    $usedHolidayDays = $dbHelper->GetUsedHolidayDays($loggedEmpId);
+
+    $remainingHolidayDays = $dbHelper->GetRemainingHolidayDays($loggedEmpId);
+
+    $pendingHolidayDays = $dbHelper->GetPendingHolidayDays($loggedEmpId);
+    $totalHolidayDays = $usedHolidayDays + $remainingHolidayDays;
+}
+
+echo '
+<div class="hlr-statistics">
+    <h3>Holiday days</h3>
+    <ul class="hlr-statistics-list">
+        <li>TOTAL: ' . $totalHolidayDays . '</li>
+        <li>REMAINING: '. $remainingHolidayDays .'</li>
+        <li>USED: '. $usedHolidayDays .'</li>
+        <li>PENDING: '. $pendingHolidayDays .'</li>
+    </ul>
+</div>
+';
+?>
+<div class="hlr-request-history">
+    <h3>Recent holiday requests</h3>
+    <table class="requests-table">
+        <tr>
+            <th>StartDay</th>
+            <th>EndDay</th>
+            <th>SubmittedOn</th>
+            <th>Status</th>
+        </tr>
+    </table>
+    <button class="loadNewDataOnClick">Load more</button>
+
+</div>
+<script>
+    var empId = <?php echo json_encode($loggedEmpId); ?>;
+</script>
+<script src="../JavaScript/loadMostRecentHLR.js"></script>
+<script src="../JavaScript/loadMoreHLR-OnClick.js"></script>
 </body>
 </html>
+<?php
+}
+else{
+    header("Location: ../HTML-PHP/landing-login.php");
+}
+?>
