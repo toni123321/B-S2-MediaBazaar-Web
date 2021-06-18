@@ -38,13 +38,9 @@ if(isset($_SESSION['loggedUserId']))
 
         </div>
         <div class="btnview">
-<!--            <a href="#">View full schedule ></a>-->
-<form id="viewSchedule" class="viewSchedule" action="../Handling/scheduleHandling.php" method="post">
-            <button type="submit">View full schedule ></button>
-</form>
-            <h2>
-
-            </h2>
+            <form id="viewSchedule" class="viewSchedule" action="../HTML-PHP/schedule.php" method="post">
+                        <button type="submit">View full schedule ></button>
+            </form>
         </div>
     </div>
 
