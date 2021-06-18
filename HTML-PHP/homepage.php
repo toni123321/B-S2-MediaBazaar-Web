@@ -38,14 +38,38 @@ if(isset($_SESSION['loggedUserId']))
 
         </div>
         <div class="btnview">
-<!--            <a href="#">View full schedule ></a>-->
-<form id="viewSchedule" class="viewSchedule" action="../Handling/scheduleHandling.php" method="post">
-            <button type="submit">View full schedule ></button>
-</form>
-            <h2>
-
-            </h2>
+            <form id="viewSchedule" class="viewSchedule" action="../Handling/scheduleHandling.php" method="post">
+                <button type="submit">View full schedule ></button>
+            </form>
+            <h2></h2>
         </div>
+        <?php
+        if (isset($_SESSION['nextShiftTime'])) {
+            date_default_timezone_set('Europe/Amsterdam');
+
+            $nextShift = unserialize($_SESSION['nextShiftTime']);
+            $nextShift2 = unserialize($_SESSION['nextShiftTime']);
+
+            $dateNowString = date("Y-m-d H:i:s");
+            $dateNow = new DateTime($dateNowString);
+
+            $earlyCheckIn = $nextShift->modify('-15 minutes');
+            $lateCheckIn = $nextShift2->modify('+5 minutes');
+
+            $earlyCheckInSTR = $earlyCheckIn->format("Y-m-d H:i:s");
+            $lateCheckInSTR =  $lateCheckIn->format("Y-m-d H:i:s");
+
+            if($dateNowString > $earlyCheckInSTR && $dateNowString < $lateCheckInSTR) {
+               echo '
+            <div class="btnview">
+                <form id="viewSchedule" class="viewSchedule checkInBtn" action="../Handling/scheduleHandling.php" method="post">
+                    <button type="submit">Check in</button>
+                </form>
+            </div>';
+            }
+        }
+
+        ?>
     </div>
 
     <?php include '../HTML-PHP/footer.php'; ?>

@@ -373,5 +373,24 @@ class DbHelper {
         }
     }
 
+    public function CheckInShift($shiftID){
+        try {
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "UPDATE 	shift 
+                    SET HasAttended = 1
+                    WHERE ID = ?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$shiftID]);
+
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
 }
 ?>

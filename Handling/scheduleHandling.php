@@ -9,7 +9,7 @@ if(isset($_SESSION['loggedUserId'])) {
     $loggedUserId = (int)$_SESSION['loggedUserId'];
     $currEmp = $employeeManager->GetEmployee($loggedUserId);
     $selectedWeekNum = (int)$_GET['selectedWeek'];
-    $dateNowString = date("Y-m-d");
+    $dateNowString = date("Y-m-d H:i:s");
     $dateNow = strtotime($dateNowString);
     $shiftWeek = idate('W', $dateNow);
 

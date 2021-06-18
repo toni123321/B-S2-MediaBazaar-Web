@@ -12,6 +12,7 @@ if(isset($_SESSION['loggedUserId']))
     $dateNowString = date("Y-m-d H:i:s");
     $dateNow = new DateTime($dateNowString);
 
+    date_default_timezone_set('Europe/Amsterdam');
     $nextShift = null;
 
     foreach ($shifts as $shift)
@@ -43,6 +44,7 @@ if(isset($_SESSION['loggedUserId']))
             $shiftDate->setTime(17, 00);
         }
         $_SESSION['nextShiftTime'] = serialize($shiftDate);
+        $_SESSION['nextShiftId'] = $nextShift;
     }
     else{
         unset($_SESSION['nextShiftTime']);
