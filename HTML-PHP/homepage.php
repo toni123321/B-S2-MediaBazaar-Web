@@ -38,7 +38,7 @@ if(isset($_SESSION['loggedUserId']))
 
         </div>
         <div class="btnview">
-            <form id="viewSchedule" class="viewSchedule" action="../Handling/scheduleHandling.php" method="post">
+            <form id="viewSchedule" class="viewSchedule" action="../HTML-PHP/schedule.php" method="post">
                 <button type="submit">View full schedule ></button>
             </form>
             <h2></h2>
@@ -62,7 +62,7 @@ if(isset($_SESSION['loggedUserId']))
             if($dateNowString > $earlyCheckInSTR && $dateNowString < $lateCheckInSTR) {
                echo '
             <div class="btnview">
-                <form id="viewSchedule" class="viewSchedule checkInBtn" action="../Handling/scheduleHandling.php" method="post">
+                <form id="viewSchedule" class="viewSchedule checkInBtn" action="../HTML-PHP/schedule.php" method="post">
                     <button type="submit">Check in</button>
                 </form>
             </div>';
@@ -75,7 +75,6 @@ if(isset($_SESSION['loggedUserId']))
     <?php include '../HTML-PHP/footer.php'; ?>
     <script src="../JavaScript/autoRefreshHomepage.js"></script>
     <script src="../JavaScript/processProgressBar.js"></script>
-    <script src="../JavaScript/showShiftForSelectedWeek.js"></script>
 
 </body>
 </html>
