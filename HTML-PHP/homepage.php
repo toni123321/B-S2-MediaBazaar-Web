@@ -16,6 +16,7 @@ if(isset($_SESSION['loggedUserId']))
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="refresh" content="600" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/homepage-style.css">
     <script src="../Libraries/jquery-3.6.0.min.js"></script>
@@ -72,7 +73,7 @@ if(isset($_SESSION['loggedUserId']))
     </div>
 
     <?php include '../HTML-PHP/footer.php'; ?>
-    <script src="../JavaScript/autoRefreshHomepage.js"></script>
+    <!--<script src="../JavaScript/autoRefreshHomepage.js"></script>-->
     <script src="../JavaScript/processProgressBar.js"></script>
 
 </body>
