@@ -11,5 +11,5 @@ if(issetSE($_SESSION['nextShiftId'])){
 
     unset($_SESSION['nextShiftId']);
 
-    header("../Handling/scheduleHandling.php");
+    header("../HTML-PHP/schedule.php");
 }

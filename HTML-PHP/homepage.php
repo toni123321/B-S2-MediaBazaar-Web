@@ -41,7 +41,6 @@ if(isset($_SESSION['loggedUserId']))
             <form id="viewSchedule" class="viewSchedule" action="../HTML-PHP/schedule.php" method="post">
                 <button type="submit">View full schedule ></button>
             </form>
-            <h2></h2>
         </div>
         <?php
         if (isset($_SESSION['nextShiftTime'])) {
@@ -62,7 +61,7 @@ if(isset($_SESSION['loggedUserId']))
             if($dateNowString > $earlyCheckInSTR && $dateNowString < $lateCheckInSTR) {
                echo '
             <div class="btnview">
-                <form id="viewSchedule" class="viewSchedule checkInBtn" action="../HTML-PHP/schedule.php" method="post">
+                <form id="viewSchedule" class="viewSchedule checkInBtn" action="../Handling/checkInHandling.php" method="post">
                     <button type="submit">Check in</button>
                 </form>
             </div>';
