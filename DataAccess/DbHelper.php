@@ -20,6 +20,38 @@ class DbHelper {
         $this->password = $password;
     }
 
+    public function GetUsersExpiringContract($id, $email, $depName){
+        try {
+
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbName", $this->username,  $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = "SELECT count(*)
+                    from employee as e
+                    inner join department as d
+                    on d.ID = e.DepartmentID 
+                    where EndDate < CURDATE() and e.ID = ? and e.Email = ? and d.Name = ?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$id, $email, $depName]);
+
+            $result = $stmt->fetchColumn();
+
+
+            // Close DB connection
+            $this->conn = null;
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+        if($result == 0){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
     public function GetUsers()
     {
         $employees = array();
@@ -31,7 +63,8 @@ class DbHelper {
             $sql = "SELECT e.*, d.Name as'DepName'
                     from employee as e
                     inner join department as d
-                    on d.ID = e.DepartmentID";
+                    on d.ID = e.DepartmentID 
+                    where EndDate >= CURDATE() or EndDate is NULL";
 
 
             $result = $this->conn->query($sql);

@@ -24,14 +24,25 @@
           $_SESSION['error_login'] = $error_msg;
           header("Location: ../HTML-PHP/landing-login.php");
           exit();
-          //return $error_msg;
       }
     }
     else{
-        session_start();
-        $_SESSION['error_login'] = $error_msg;
-        header("Location: ../HTML-PHP/landing-login.php");
-        exit();
+        $dbHelper = new DbHelper();
+        $isEmpCredentialsValid = $dbHelper->GetUsersExpiringContract($employee_id, $email, $departmentName);
+
+        if ($isEmpCredentialsValid) {
+            session_start();
+            $_SESSION['error_login'] = "Your contract is expired so you can't log in into your account! 
+            Please contact the Administration department for more info!";
+            header("Location: ../HTML-PHP/landing-login.php");
+            exit();
+        }
+        else {
+            session_start();
+            $_SESSION['error_login'] = $error_msg;
+            header("Location: ../HTML-PHP/landing-login.php");
+            exit();
+        }
     }
   }
 
@@ -41,10 +52,15 @@
       $employee_id = (int) $_POST['employeeId'];
       $departmentName = (string) $_POST['departmentName'];
       //echo "Email: {$email}; ID: {$employee_id}; DepName: {$departmentName}";
-      echo LoginHandling($employee_id, $email, $departmentName);
+      if($email == '' || $employee_id == '' || $departmentName == '') {
+          session_start();
+          $_SESSION['error_login'] = "Type in all the boxes to login!";
+          header("Location: ../HTML-PHP/landing-login.php");
+          exit();
+      }
+      else {
+          LoginHandling($employee_id, $email, $departmentName);
+      }
 
-  }
-  else{
-    echo 'Write username and password to Log in!';
   }
 ?>

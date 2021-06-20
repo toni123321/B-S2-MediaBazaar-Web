@@ -7,11 +7,15 @@ body {
 .msg {
     margin-top: 5%;
     text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Center the form both horizontally and vertically in the center */
 .main-parent {
     height: 100vh;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
