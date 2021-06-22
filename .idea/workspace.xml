@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="- added a method to find hte number of all inprogress HLR of a said employee&#10;- fixed and issue where 1 day HLR were shown with 0 total days&#10;- the HLR form input fields are now inactive if the user has 3 in progress HLRs&#10;- the HLR form submit button changes depending on the form and if its active">
-      <change afterPath="$PROJECT_DIR$/Handling/checkInHandling.php" afterDir="false" />
+    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="added check in feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/DbHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DbHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTML-PHP/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTML-PHP/homepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handling/checkInHandling.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/checkInHandling.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Handling/scheduleHandling.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/scheduleHandling.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" afterDir="false" />
     </list>
@@ -77,7 +77,10 @@
       <workItem from="1623834411607" duration="7043000" />
       <workItem from="1623854642707" duration="4956000" />
       <workItem from="1623941783471" duration="5681000" />
-      <workItem from="1624047089802" duration="5040000" />
+      <workItem from="1624047089802" duration="5116000" />
+      <workItem from="1624055210011" duration="206000" />
+      <workItem from="1624316636572" duration="1483000" />
+      <workItem from="1624356355810" duration="3153000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -226,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623858900482</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added check in feature">
+      <created>1624054668899</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1624054668899</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +272,7 @@
     <MESSAGE value="changed scheduler gap between items" />
     <MESSAGE value="the HLR now has a request date and time" />
     <MESSAGE value="- added a method to find hte number of all inprogress HLR of a said employee&#10;- fixed and issue where 1 day HLR were shown with 0 total days&#10;- the HLR form input fields are now inactive if the user has 3 in progress HLRs&#10;- the HLR form submit button changes depending on the form and if its active" />
-    <option name="LAST_COMMIT_MESSAGE" value="- added a method to find hte number of all inprogress HLR of a said employee&#10;- fixed and issue where 1 day HLR were shown with 0 total days&#10;- the HLR form input fields are now inactive if the user has 3 in progress HLRs&#10;- the HLR form submit button changes depending on the form and if its active" />
+    <MESSAGE value="added check in feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="added check in feature" />
   </component>
 </project>
