@@ -32,7 +32,6 @@ if(isset($_SESSION['loggedUserId']))
 
         $shiftDate = $nextShift->GetDate();
 
-        $shiftDate->setTime(13, 00);
 
       if($nextShift->GetType() == "Morning")
         {
