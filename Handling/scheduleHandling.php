@@ -131,6 +131,9 @@ if(isset($_SESSION['loggedUserId'])) {
                 echo '<div>No shift(s)</div>';
             } else if ($shift2 == null) {
                 echo '<div class="date">' . $shift1->GetDate()->format('j M Y') . '</div>';
+                if ($shift1->GetWfh() == true) {
+                    echo '<div class="wfh">WFH</div>';
+                }
                 if ($shift1->GetType() == "Morning") {
                     echo '<div class="time">08:00-12:00</div>';
                 } else if ($shift1->GetType() == "Afternoon") {
@@ -140,6 +143,9 @@ if(isset($_SESSION['loggedUserId'])) {
                 };
             } else {
                 echo '<div class="date">' . $shift1->GetDate()->format('j M Y') . '</div>';
+                if ($shift1->GetWfh() == true) {
+                    echo '<div class="wfh">WFH</div>';
+                }
                 if ($shift1->GetType() == "Morning") {
                     echo '<div class="time">08:00-12:00</div>';
                 } else if ($shift1->GetType() == "Afternoon") {
@@ -149,6 +155,9 @@ if(isset($_SESSION['loggedUserId'])) {
                 }
                 echo '<hr class="hr-2ndShift">';
                 echo '<div class="date">' . $shift2->GetDate()->format('j M Y') . '</div>';
+                if ($shift2->GetWfh() == true) {
+                    echo '<div class="wfh">WFH</div>';
+                }
                 if ($shift2->GetType() == "Morning") {
                     echo '<div class="time">08:00-12:00</div>';
                 } else if ($shift2->GetType() == "Noon") {

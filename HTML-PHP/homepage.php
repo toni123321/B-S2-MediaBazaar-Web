@@ -30,7 +30,7 @@ if(isset($_SESSION['loggedUserId']))
             <?php
                 if(isset($_SESSION['nextShiftTime'])) {
                     $nextShift = unserialize($_SESSION['nextShiftTime']);
-                    echo "<p>Your next shift starts at {$nextShift->format('g:i')} on {$nextShift->format('j M, Y')} ({$nextShift->format('l')})</p>";
+                    echo "<p>Your next shift starts at {$nextShift->format('G:i')} on {$nextShift->format('j M, Y')} ({$nextShift->format('l')})</p>";
                 }
                 else{
                     echo '<p>There are no upcoming shifts. Have fun!</p>';
@@ -40,30 +40,49 @@ if(isset($_SESSION['loggedUserId']))
         </div>
         <div class="btnview">
             <form id="viewSchedule" class="viewSchedule" action="../HTML-PHP/schedule.php" method="post">
-                <button type="submit">View full schedule ></button>
+                <button type="submit">View full schedule</button>
             </form>
         </div>
         <?php
-        if (isset($_SESSION['nextShiftTime'])) {
+        if (isset($_SESSION['nextShiftId'])) {
             date_default_timezone_set('Europe/Amsterdam');
 
-            $nextShift = unserialize($_SESSION['nextShiftTime']);
-            $nextShift2 = unserialize($_SESSION['nextShiftTime']);
+            $nextShiftId = (int)($_SESSION['nextShiftId']);
+            $DbHelper = new DbHelper();
+            $shifts = $DbHelper->GetShifts();
+            $nextShift = null;
+
+            foreach ($shifts as $shift){
+                if($shift->GetId() == $nextShiftId){
+                    $nextShift = $shift;
+                }
+            }
+
+            $nextShiftTime = unserialize($_SESSION['nextShiftTime']);
+            $nextShiftTime2 = unserialize($_SESSION['nextShiftTime']);
 
             $dateNowString = date("Y-m-d H:i:s");
             $dateNow = new DateTime($dateNowString);
 
-            $earlyCheckIn = $nextShift->modify('-15 minutes');
-            $lateCheckIn = $nextShift2->modify('+5 minutes');
+            $earlyCheckIn = $nextShiftTime->modify('-15 minutes');
+            $lateCheckIn = $nextShiftTime2->modify('+5 minutes');
 
             $earlyCheckInSTR = $earlyCheckIn->format("Y-m-d H:i:s");
             $lateCheckInSTR =  $lateCheckIn->format("Y-m-d H:i:s");
 
-            if($dateNowString > $earlyCheckInSTR && $dateNowString < $lateCheckInSTR) {
+            if($dateNowString > $earlyCheckInSTR && $dateNowString < $lateCheckInSTR && $nextShift->GetHasAttended() == false) {
                echo '
             <div class="btnview">
                 <form id="viewSchedule" class="viewSchedule checkInBtn" action="../Handling/checkInHandling.php" method="post">
                     <button type="submit">Check in</button>
+                </form>
+            </div>';
+            }
+            else if($dateNowString > $earlyCheckInSTR && $dateNowString < $lateCheckInSTR && $nextShift->GetHasAttended() == true){
+                    echo '
+            <div class="btnview">
+                <form id="viewSchedule" class="viewSchedule checkInBtn" action="../Handling/checkInHandling.php" method="post">
+                    <button class="alreadyChecked" type="submit" disabled>Already checked in</button>
                 </form>
             </div>';
             }

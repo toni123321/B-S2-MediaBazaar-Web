@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="- added a method to find hte number of all inprogress HLR of a said employee&#10;- fixed and issue where 1 day HLR were shown with 0 total days&#10;- the HLR form input fields are now inactive if the user has 3 in progress HLRs&#10;- the HLR form submit button changes depending on the form and if its active">
-      <change afterPath="$PROJECT_DIR$/Handling/checkInHandling.php" afterDir="false" />
+    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="if the user has checked in the check in button color is changed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/DbHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DbHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML-PHP/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTML-PHP/homepage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handling/scheduleHandling.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/scheduleHandling.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" afterDir="false" />
     </list>
     <list id="38f24340-5179-4fdd-8f41-7ca64150a0df" name="Changes by tonit" comment="Changes by Antonio Takev" />
@@ -77,7 +73,11 @@
       <workItem from="1623834411607" duration="7043000" />
       <workItem from="1623854642707" duration="4956000" />
       <workItem from="1623941783471" duration="5681000" />
-      <workItem from="1624047089802" duration="5040000" />
+      <workItem from="1624047089802" duration="5116000" />
+      <workItem from="1624055210011" duration="206000" />
+      <workItem from="1624316636572" duration="1483000" />
+      <workItem from="1624356355810" duration="5844000" />
+      <workItem from="1624364740323" duration="595000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -226,7 +226,42 @@
       <option name="project" value="LOCAL" />
       <updated>1623858900482</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added check in feature">
+      <created>1624054668899</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1624054668899</updated>
+    </task>
+    <task id="LOCAL-00023" summary="- fix: check in now does not skip the date is its today&#10;- check in button will not be shown if the user has already checked in&#10;- WFH label is added to the schedule for all shifts marked as WFH">
+      <created>1624359734234</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1624359734234</updated>
+    </task>
+    <task id="LOCAL-00024" summary="changed times for shifts">
+      <created>1624362765691</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1624362765691</updated>
+    </task>
+    <task id="LOCAL-00025" summary="changed times for shifts 2">
+      <created>1624362782911</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1624362782911</updated>
+    </task>
+    <task id="LOCAL-00026" summary="if the user has checked in the check in button color is changed">
+      <created>1624363832670</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1624363832670</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +297,11 @@
     <MESSAGE value="changed scheduler gap between items" />
     <MESSAGE value="the HLR now has a request date and time" />
     <MESSAGE value="- added a method to find hte number of all inprogress HLR of a said employee&#10;- fixed and issue where 1 day HLR were shown with 0 total days&#10;- the HLR form input fields are now inactive if the user has 3 in progress HLRs&#10;- the HLR form submit button changes depending on the form and if its active" />
-    <option name="LAST_COMMIT_MESSAGE" value="- added a method to find hte number of all inprogress HLR of a said employee&#10;- fixed and issue where 1 day HLR were shown with 0 total days&#10;- the HLR form input fields are now inactive if the user has 3 in progress HLRs&#10;- the HLR form submit button changes depending on the form and if its active" />
+    <MESSAGE value="added check in feature" />
+    <MESSAGE value="- fix: check in now does not skip the date is its today&#10;- check in button will not be shown if the user has already checked in&#10;- WFH label is added to the schedule for all shifts marked as WFH" />
+    <MESSAGE value="changed times for shifts" />
+    <MESSAGE value="changed times for shifts 2" />
+    <MESSAGE value="if the user has checked in the check in button color is changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="if the user has checked in the check in button color is changed" />
   </component>
 </project>

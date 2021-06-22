@@ -37,3 +37,11 @@ body {
 .weekNumINPUT{
     display: none;
 }
+
+.checkInBtn{
+    margin-top: 0.5rem;
+}
+
+.alreadyChecked{
+    background-color: #318956 !important;
+}
