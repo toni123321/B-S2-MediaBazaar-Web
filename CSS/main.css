@@ -29,9 +29,7 @@ body{
     display: unset;
 }
 
-.checkInBtn{
-    margin-top: 0.5rem;
-}
+
 
 /* TODO: Phone view navbar */
 @media screen and (max-width: 460px) {

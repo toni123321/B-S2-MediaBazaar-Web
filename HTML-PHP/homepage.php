@@ -78,6 +78,14 @@ if(isset($_SESSION['loggedUserId']))
                 </form>
             </div>';
             }
+            else if($dateNowString > $earlyCheckInSTR && $dateNowString < $lateCheckInSTR && $nextShift->GetHasAttended() == true){
+                    echo '
+            <div class="btnview">
+                <form id="viewSchedule" class="viewSchedule checkInBtn" action="../Handling/checkInHandling.php" method="post">
+                    <button class="alreadyChecked" type="submit" disabled>Already checked in</button>
+                </form>
+            </div>';
+            }
         }
 
         ?>

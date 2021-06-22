@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="- fix: check in now does not skip the date is its today&#10;- check in button will not be shown if the user has already checked in&#10;- WFH label is added to the schedule for all shifts marked as WFH">
+    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="changed times for shifts 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/homepage-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/homepage-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML-PHP/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/HTML-PHP/homepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" afterDir="false" />
     </list>
     <list id="38f24340-5179-4fdd-8f41-7ca64150a0df" name="Changes by tonit" comment="Changes by Antonio Takev" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +79,7 @@
       <workItem from="1624047089802" duration="5116000" />
       <workItem from="1624055210011" duration="206000" />
       <workItem from="1624316636572" duration="1483000" />
-      <workItem from="1624356355810" duration="3954000" />
+      <workItem from="1624356355810" duration="5034000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -238,7 +242,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624359734234</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="changed times for shifts">
+      <created>1624362765691</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1624362765691</updated>
+    </task>
+    <task id="LOCAL-00025" summary="changed times for shifts 2">
+      <created>1624362782911</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1624362782911</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +294,8 @@
     <MESSAGE value="- added a method to find hte number of all inprogress HLR of a said employee&#10;- fixed and issue where 1 day HLR were shown with 0 total days&#10;- the HLR form input fields are now inactive if the user has 3 in progress HLRs&#10;- the HLR form submit button changes depending on the form and if its active" />
     <MESSAGE value="added check in feature" />
     <MESSAGE value="- fix: check in now does not skip the date is its today&#10;- check in button will not be shown if the user has already checked in&#10;- WFH label is added to the schedule for all shifts marked as WFH" />
-    <option name="LAST_COMMIT_MESSAGE" value="- fix: check in now does not skip the date is its today&#10;- check in button will not be shown if the user has already checked in&#10;- WFH label is added to the schedule for all shifts marked as WFH" />
+    <MESSAGE value="changed times for shifts" />
+    <MESSAGE value="changed times for shifts 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed times for shifts 2" />
   </component>
 </project>
