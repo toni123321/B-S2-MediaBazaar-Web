@@ -34,7 +34,7 @@ if(isset($_SESSION['loggedUserId']))
 
         $shiftDate->setTime(13, 00);
 
-      /*  if($nextShift->GetType() == "Morning")
+      if($nextShift->GetType() == "Morning")
         {
             $shiftDate->setTime(8, 00);
         }
@@ -45,7 +45,7 @@ if(isset($_SESSION['loggedUserId']))
         else if($nextShift->GetType() == "Evening")
         {
             $shiftDate->setTime(17, 00);
-        }*/
+        }
 
         $_SESSION['nextShiftTime'] = serialize($shiftDate);
         $_SESSION['nextShiftId'] = $nextShift->GetId();
