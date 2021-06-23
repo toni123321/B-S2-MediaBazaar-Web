@@ -28,6 +28,8 @@ if(isset($_SESSION['loggedUserId']))
   $dbHelper = new DbHelper();
   $isRequestAlreadySent = $dbHelper->IsAccountEditRequestSent($editedEmp->GetID());
   echo $isRequestAlreadySent;
+
+
   //echo $dbHelper->IsAccountEditRequestSent($editedEmp->GetID());
   if($isRequestAlreadySent == true)
   {

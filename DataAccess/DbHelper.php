@@ -147,7 +147,7 @@ class DbHelper {
         }
     }
 
-    public function IsAccountEditRequestSent($id)
+    public function IsAccountEditRequestSent($empId)
     {
         $isRequestSent = false;
         try {
@@ -155,11 +155,11 @@ class DbHelper {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sql = "SELECT count(*) FROM pending_changed_details 
-                    WHERE ID=? and Status=?";
+                    WHERE EmployeeID=? and Status=?";
 
             $stmt = $this->conn->prepare($sql);
             $status = "InProgress";
-            $stmt->execute([$id, $status]);
+            $stmt->execute([$empId, $status]);
             $result = $stmt->fetchColumn();
 
 
@@ -184,7 +184,7 @@ class DbHelper {
 
             $sql = "INSERT INTO 
                     pending_changed_details
-                    (ID, Email, PhoneNumber, Street, City, Country, PostCode, 
+                    (EmployeeID, Email, PhoneNumber, Street, City, Country, PostCode, 
                      EmergencyContactName, EmergencyContactRelation, EmergencyContactEmail, 
                      EmergencyContactPhone, Status, RequestDate) 
                     VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -218,10 +218,10 @@ class DbHelper {
                     EmergencyContactEmail = ?, 
                     EmergencyContactPhone = ?, 
                     RequestDate = ?
-                    WHERE ID = ?";
+                    WHERE EmployeeID = ? and Status = ?";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([$emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone(), $newRequestDate->format('Y-m-d H:i:s'), $emp->GetID()]);
+            $stmt->execute([$emp->GetEmail(), $emp->GetPhoneNumber(), $emp->GetStreet(), $emp->GetCity(), $emp->GetCountry(), $emp->GetPostCode(), $emp->GetEmConName(), $emp->GetEmConRelation(), $emp->GetEmConEmail(), $emp->GetEmConPhone(), $newRequestDate->format('Y-m-d H:i:s'), $emp->GetID(), "InProgress"]);
 
             $this->conn = null;
 
