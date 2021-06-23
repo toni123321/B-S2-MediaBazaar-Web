@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="if the user has checked in the check in button color is changed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" beforeDir="false" afterPath="$PROJECT_DIR$/Handling/timeUntilNextShift.php" afterDir="false" />
-    </list>
+    <list default="true" id="8bb2a57f-0390-4cbc-a982-d78ed34c4ab2" name="Default Changelist" comment="..." />
     <list id="38f24340-5179-4fdd-8f41-7ca64150a0df" name="Changes by tonit" comment="Changes by Antonio Takev" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +74,7 @@
       <workItem from="1624055210011" duration="206000" />
       <workItem from="1624316636572" duration="1483000" />
       <workItem from="1624356355810" duration="5844000" />
-      <workItem from="1624364740323" duration="595000" />
+      <workItem from="1624364740323" duration="633000" />
     </task>
     <task id="LOCAL-00001" summary="deleted a file that was uploaded by a mistake">
       <created>1622329768415</created>
@@ -261,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624363832670</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="...">
+      <created>1624373762313</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1624373762313</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +306,7 @@
     <MESSAGE value="changed times for shifts" />
     <MESSAGE value="changed times for shifts 2" />
     <MESSAGE value="if the user has checked in the check in button color is changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="if the user has checked in the check in button color is changed" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>

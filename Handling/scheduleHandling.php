@@ -135,11 +135,11 @@ if(isset($_SESSION['loggedUserId'])) {
                     echo '<div class="wfh">WFH</div>';
                 }
                 if ($shift1->GetType() == "Morning") {
-                    echo '<div class="time">08:00-12:00</div>';
+                    echo '<div class="time">08:00-12:30</div>';
                 } else if ($shift1->GetType() == "Afternoon") {
-                    echo '<div class="time">12:00-16:00</div>';
+                    echo '<div class="time">12:30-17:00</div>';
                 } else if ($shift1->GetType() == "Evening") {
-                    echo '<div class="time">16:00-20:00</div>';
+                    echo '<div class="time">17:00-21:30</div>';
                 };
             } else {
                 echo '<div class="date">' . $shift1->GetDate()->format('j M Y') . '</div>';
@@ -147,11 +147,11 @@ if(isset($_SESSION['loggedUserId'])) {
                     echo '<div class="wfh">WFH</div>';
                 }
                 if ($shift1->GetType() == "Morning") {
-                    echo '<div class="time">08:00-12:00</div>';
+                    echo '<div class="time">08:00-12:30</div>';
                 } else if ($shift1->GetType() == "Afternoon") {
-                    echo '<div class="time">12:00-16:00</div>';
+                    echo '<div class="time">12:30-17:00</div>';
                 } else if ($shift1->GetType() == "Evening") {
-                    echo '<div class="time">16:00-20:00</div>';
+                    echo '<div class="time">17:00-21:30</div>';
                 }
                 echo '<hr class="hr-2ndShift">';
                 echo '<div class="date">' . $shift2->GetDate()->format('j M Y') . '</div>';
@@ -159,11 +159,11 @@ if(isset($_SESSION['loggedUserId'])) {
                     echo '<div class="wfh">WFH</div>';
                 }
                 if ($shift2->GetType() == "Morning") {
-                    echo '<div class="time">08:00-12:00</div>';
+                    echo '<div class="time">08:00-12:30</div>';
                 } else if ($shift2->GetType() == "Noon") {
-                    echo '<div class="time">12:00-16:00</div>';
+                    echo '<div class="time">12:30-17:00</div>';
                 } else if ($shift2->GetType() == "Evening") {
-                    echo '<div class="time">16:00-20:00</div>';
+                    echo '<div class="time">17:00-21:30</div>';
                 }
             }
             echo '</div>';
